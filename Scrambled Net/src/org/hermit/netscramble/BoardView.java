@@ -37,10 +37,11 @@ import java.util.EnumMap;
 import java.util.Random;
 import java.util.Vector;
 
-import net.goui.util.MTRandom;
 
 import org.hermit.netscramble.NetScramble.Sound;
 import org.hermit.netscramble.NetScramble.State;
+
+import com.android.game.util.MTRandom;
 
 import android.content.Context;
 import android.os.Bundle;
