@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent"  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/nav_e_bg"
+	android:layout_height="60dip" >
+	<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+	   android:text="大学"   android:layout_marginLeft="30dip"
+	   android:layout_centerVertical="true" android:textColor="#CFCECD"
+		android:layout_height="wrap_content" android:textSize="20dip"  >
+	</TextView>
+	<ImageView  android:layout_width="wrap_content"  android:layout_height="wrap_content"
+	 android:layout_centerVertical="true"
+	  android:layout_alignParentRight="true"
+	/>
+</RelativeLayout>

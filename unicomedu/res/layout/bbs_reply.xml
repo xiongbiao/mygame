@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/replyliner">
+	<LinearLayout
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@color/bbs_ask" >
+			<RelativeLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="50dp"
+		    android:background="@drawable/background_title_bar"
+		    android:orientation="vertical" >
+		
+			<Button
+		        android:id="@+id/back"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginTop="10dp"
+		        android:layout_centerInParent="true"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentTop="true"
+		        android:textColor="@color/white"
+		        android:background="@drawable/button_background_back" />
+		
+		    <Button
+		        android:id="@+id/right_btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerInParent="true"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_alignParentRight="true"
+		        android:layout_alignParentTop="true"
+		        android:textColor="@color/white"
+		        android:background="@drawable/button_background_3"
+		        android:text="回复" />
+		
+		    <TextView
+		        android:id="@+id/title"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerHorizontal="true"
+		        android:layout_centerVertical="true"
+		        android:textColor="@color/white"
+		        android:textSize="20sp" />
+		
+		</RelativeLayout>
+	    <EditText
+	        android:id="@+id/bbs_reply_context"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:layout_marginTop="20dp"
+	        android:background="@android:drawable/edit_text"
+	        android:gravity="top"
+	        android:hint="内容：说点什么吧..."
+	        android:height="300dp" />
+
+	    <RelativeLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dp"
+	        android:orientation="horizontal" >
+
+	        <ImageButton
+	            android:id="@+id/imageButton1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/face" android:visibility="gone"/>
+
+	        <ImageButton
+	            android:id="@+id/imageButton2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="50dp"
+	            android:src="@drawable/photo" android:visibility="gone"/>
+
+	        <ImageButton
+	            android:id="@+id/imageButton3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="100dp"
+	            android:src="@drawable/takephoto"  android:visibility="gone"/>
+	    </RelativeLayout>
+
+		
+	 </LinearLayout>
+</LinearLayout>

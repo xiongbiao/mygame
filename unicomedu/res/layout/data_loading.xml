@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/loading_contentLayout" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_centerVertical="true"
+		android:gravity="center" android:orientation="horizontal">
+		<!-- 进度条 -->
+		<ProgressBar android:id="@+id/data_progressBar"
+			style="?android:attr/progressBarStyleSmall" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_gravity="center" />
+		<!-- 更新 状态 -->
+		<TextView android:id="@+id/data_lastUpdatedTextView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textSize="18sp"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+	<Button
+        android:id="@+id/btn_show"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+		android:visibility="invisible"
+        />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/r2" >
+ 
+        <ImageView
+            android:id="@+id/game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/game"
+            android:visibility="invisible" />  
+
+        <ImageView
+            android:id="@+id/person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/game"
+            android:src="@drawable/personal_zone"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/game"
+            android:layout_below="@id/game"
+            android:src="@drawable/school_area"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/person"
+            android:layout_below="@+id/person"
+            android:layout_marginTop="-4dp"
+            android:src="@drawable/online_test"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/school"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toLeftOf="@+id/online_class"
+            android:src="@drawable/online_read"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/online_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/school"
+            android:layout_marginTop="-3dp"
+            android:layout_marginRight="-10dp"
+            android:layout_toLeftOf="@+id/vidio"
+            android:src="@drawable/course_introduce"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/vidio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/test"
+            android:layout_below="@+id/test"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/online_video"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/online_class"
+            android:layout_below="@+id/online_class"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/teacher_introduce"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vidio"
+            android:layout_marginTop="-13dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/teacher"
+            android:src="@drawable/question_and_answer"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/accepte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/answer"
+            android:layout_below="@+id/answer"
+            android:layout_marginTop="-5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/teacher"
+            android:src="@drawable/collection"
+            android:visibility="invisible" />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+   	 	android:orientation="horizontal"
+   	 	android:layout_alignParentLeft="true"
+   	 	android:layout_alignParentBottom="true"
+   	 	android:layout_marginBottom="10dp" >
+        
+        <ImageView
+        android:id="@+id/unicom_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/home_btn_unicom" />
+    
+    	<ImageView
+    	    android:id="@+id/setting_view"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentBottom="false"
+    	    android:layout_alignParentTop="false"
+    	    android:layout_marginBottom="5dp"
+    	    android:layout_marginLeft="15dp"
+    	    android:layout_marginTop="5dp"
+    	    android:src="@drawable/home_btn_setting" />
+    
+    	<ImageView
+    	    android:id="@+id/message_view"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentBottom="false"
+    	    android:layout_alignParentTop="false"
+    	    android:layout_marginBottom="5dp"
+    	    android:layout_marginLeft="15dp"
+    	    android:layout_marginTop="5dp"
+    	    android:src="@drawable/home_btn_msg" />
+    
+    	<ImageView
+    	    android:id="@+id/checkin_view"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentBottom="false"
+    	    android:layout_alignParentTop="false"
+    	    android:layout_marginBottom="5dp"
+    	    android:layout_marginLeft="15dp"
+    	    android:layout_marginTop="5dp"
+    	    android:src="@drawable/home_btn_checkin" />
+
+   	</LinearLayout>
+</RelativeLayout>

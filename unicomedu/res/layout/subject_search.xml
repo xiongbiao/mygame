@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:gravity="center" android:background="#fff" android:orientation="vertical">
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" style="@style/title_bar"
+		android:id="@+id/title_bar">
+		<ImageButton android:id="@+id/top_back"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/subject_search_title"
+			android:textColor="@color/white" android:textSize="24sp"
+			android:layout_centerInParent="true" />
+	</RelativeLayout>
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="@drawable/filter_bar">
+		<ImageButton android:id="@+id/video_search"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginRight="10dip" android:layout_alignParentRight="true"
+			android:layout_centerVertical="true" android:background="@drawable/button_background_search" />
+		<EditText 
+		    android:id="@+id/video_search_value"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_toLeftOf="@id/video_search"
+			android:layout_centerVertical="true" android:hint="@string/video_search_edit_hit"
+			android:background="@drawable/intention_course_select_bg"
+			android:layout_marginTop="15dip"
+			android:layout_marginBottom="15dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="5dip"
+			android:imeOptions="actionSearch"
+		    android:singleLine="true"
+		    android:maxLength="20" />
+		
+	</RelativeLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="0dip" android:layout_weight="1"
+		android:orientation="vertical">
+		<erb.unicomedu.ui.KeywordsFlow
+			android:id="@+id/intention_course_keywordsFlow" android:layout_width="match_parent"
+			style="@style/keyword" android:layout_marginLeft="-100dip"
+			android:layout_height="0dip" android:layout_weight="1" />
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:gravity="center">
+
+		<Button android:id="@+id/intention_course_more"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/intention_course_more_hot" 
+			 android:background="@drawable/more_popular_bg" 
+			 android:layout_marginBottom="15dip"
+			 android:textColor="#fff"
+			 />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_marginBottom="20dip"
+			android:text="@string/intention_course_surprise" />
+	</LinearLayout>
+</LinearLayout>

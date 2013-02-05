@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_name">登录</string>
+    <string name="login_pass">密码</string>
+    <string name="app_name">沃•新东方</string>
+    
+   
+    
+     <string name="pull_to_refresh_pull_label">Pull to refresh...</string>
+    <string name="pull_to_refresh_release_label">Release to refresh...</string>
+    <string name="pull_to_refresh_refreshing_label">Loading...</string>
+    <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
+    
+    
+     <string name="hello">Hello Android, DemoAppActivity!</string>
+    <string name="settings">设置</string>
+    <string name="msg_setting">消息设置</string>
+    <string name="msg_details">消息详情</string>
+    
+    <string name="media_loading_title">Loading...</string>
+    <string name="media_loading_message">Please wait... </string>
+    
+    <string name="logo_operators_name">中国联通广东省分公司</string>
+    
+    <string name="filter_name">筛选</string>
+    <string name="filter_sign_up">报名</string>
+    <string name="filter_latest">最新</string>
+    <string name="filter_popularity">人气</string>
+    <string name="filter_price">价格</string>
+    <string name="filter_jin">推荐</string>
+    <string name="filter_xingji">星级</string>
+    
+    <string name="button_yes">是</string>
+    <string name="button_no">否</string>
+    <string name="score_confirm_info">需要扣除%s积分,确定要点播吗?</string>
+    
+    <!-- 登录 -->
+    <string name="login_title_name">注册登录</string>
+    <string name="login_in">登  录</string>
+    <string name="login_registered">注  册</string>
+    <string name="login_name_hint">请输入手机号码</string>
+    <string name="login_password_hint">密码至少六位字符</string>
+    <string name="login_save_password">记住密码</string>
+    <string name="login_auto_in">自动登录</string>
+    
+    <!-- 注册 -->
+    <string name="register_title_name">注  册</string>
+    <string name="register_submit">注  册</string>
+    <string name="register_name_hint">请输入手机号码</string>
+    <string name="register_password_hint">密码(至少六位)</string>
+    <string name="register_email_hint">邮箱地址</string>
+    
+    <!-- 意向课程 -->
+    <string name="intention_course_title_name">意向课程</string>
+    <string name="intention_course_title_skip">跳过</string>
+    <string name="intention_course_title_ok">确定</string>
+    <string name="intention_course_select_empty">请点选意向课程</string>
+    <string name="intention_course_surprise">摇动手机，会有惊喜发现喔！</string>
+    <string name="intention_course_more_hot">更多热门</string>
+    <!-- ERROR	错误信息  -->
+    <string name="error_username_empty">请输入手机号码</string>
+    <string name="error_password_empty">请输入密码</string>
+    <string name="error_email_empty">请输入邮箱</string>
+    <string name="error_login">输入的帐号和密码不匹配</string>
+    <string name="error_username">输入的手机号码不正确</string>
+    <string name="error_password">密码至少六位字符</string>
+    <string name="error_email">输入的邮箱不正确</string>
+    
+    <!-- 名师 -->
+     <string name="teacher_top">名师</string>
+     <string name="teacher_search_top">名师搜索</string>
+    
+    <!--名师详情介绍 -->
+     <string name="teacherinfo_top">名师介绍</string>
+     <string name="teacherinfo_name">姓名：%s</string>
+    <string name="teacherinfo_en_name">英文名：%s</string>
+    <string name="teacherinfo_sex">性别：%s</string>
+    <string name="teacherinfo_jg">籍贯：%s</string>
+    <string name="teacherinfo_titler">职称：%s</string>
+    <string name="teacherinfo_experience">教学经验：%s</string>
+    <string name="teacherinfo_b">出生日期</string>
+    <string name="teacherinfo_title">教师介绍</string>
+    <string name="teacherinfo_info">2002 年加人新的地方 大学期间 无数次获得国际国家英语口语</string>
+    <string name="teacherinfo_pro_info">教授课程：%s</string>
+    <string name="teacherinfo_introduce">名师介绍</string>
+    <string name="teacherinfo_pro">教授课程</string>
+    <string name="teacherinfo_rating">评分</string>
+
+     <!--课程介绍 -->
+    <string name="subject_top_title">课程</string>
+    <string name="subject_info_top_title">课程介绍</string>
+    <string name="place_info_top_title">上课地点</string>
+    <string name="subject_top_nav">课程导航</string>
+     <!--课程详情介绍 -->
+    <string name="subject_name">课程名称</string>
+    <string name="subject_suit">适合学员 :</string>
+    <string name="subject_info_info">课程介绍 :</string>
+    <string name="subject_info_place">上课地点</string>
+    <string name="subject_info_instructional_videos">教学视频</string>
+    <string name="subject_info_read_online">在线阅读</string>
+    <string name="subject_info_online_test">在线测试</string>
+    <string name="subject_search_title">课程搜索</string>
+     <string name="online_register_title_name">预约报名</string>
+    
+    
+    <!-- 视频介绍 -->
+    <string name="video_info_top">在线视频</string>
+    <string name="video_info_other">相关视频</string>
+    <string name="video_info_play">播放</string>
+    <string name="video_info_author">作者: %s</string>
+    <string name="video_info_level">  : %s人已播放</string>
+    <string name="video_list_title_bar">视频课件</string>
+    <string name="video_search_title">视频搜索</string>
+    <string name="video_search_edit_hit">请输入关键词</string>
+    
+    <!-- 在线阅读 -->
+     <string name="read_info_top">在线阅读</string>
+     <string name="read_info_reading">阅读</string>
+     <string name="read_info_read_name">阅读</string>
+     <string name="read_search">阅读搜索</string>
+      <string name="obj_info_author">作者: %s</string>
+    <string name="obj_info_level"> : %s人已阅读</string>
+     <string name="read_score_confirm_info">需要扣除%s积分,确定要阅读吗?</string>
+        <string name="read_info_other">相关阅读</string>
+    
+    <!-- 在线考试 -->
+     <string name="exam_info_top">在线考试</string>
+     <string name="exam_result_top">考试结果</string>
+     <string name="exam_info_examing">考试</string>
+     <string name="exam_info_exam_name">试题介绍</string>
+      <string name="exam_info_w_q">错题释义</string>
+      <string name="exam_info_level"> : %s人已测试</string>
+     <string name="exam_search">考试搜索</string>
+     <string name="exam_score_confirm_info">需要扣除%s积分,确定要考试吗?</string>
+    
+    <!-- 校区介绍 -->
+    <string name="ei_title">校区概况</string>
+    <string name="ei_s">校区查询</string>
+    <string name="ei_address">广州校区： 体育西路</string>
+    <string name="ei_info">
+    中国联通\n
+         中国联合网络通信集团有限公司（简称“中国联通”）于2009年1月6日在原中国网通和原中国联通的基础上合并组建而成。中国联通拥有覆盖全国、通达世界的现代通信网络，积极推进固定网络和移动网络的宽带化，为广大用户提供全方位、高品质信息通信服务。2009年1月，中国联通获得了当今世界上技术最为成熟、应用最为广泛、产业链最为完善的WCDMA制式的3G牌照。目前，3G网络已经覆盖了全国县级及以上城市。\n
+    新东方教育科技集团\n  由1993年11月16日成立的北京新东方学校发展壮大而来，目前集团以培训为核心，拥有亲子中心、泡泡少儿教育、优能中学教育、基础英语培训、大学英语及考研培训、出国考试培训、多语种培训等多个培训体系，同时在基础教育、职业教育、教育研发、出国咨询、文化产业等方面取得了骄人的成绩。作为中国著名私立教育机构，新东方教育科技集团于2006年在美国纽约证券交易所上市，是中国大陆第一家在美国上市的教育机构。</string>
+    <string name="ei_info_jt">公交：\n A 校区大巴 免费接送\n
+     地铁：\n 乘坐 1号线 
+    </string>
+    <string name="ei_map_title">校区查询</string>
+    <string name="ei_map_traffic">周边交通</string>
+    <string name="ei_map_position">地理位置</string>
+    <!-- 评分对话框 -->
+    <string name="dialog_ok">确 定</string>
+    
+    <!-- 在线报名 -->
+    <string name="online_registration_class">报名班级 : </string>
+    <string name="online_registration_stu_name">学生姓名 : </string>
+    <string name="online_registration_stu_call">联系电话 : </string>
+    <string name="online_registration_address">上课地点 : </string>
+    
+    
+    
+    
+    <!-- 设置 -->
+    <string name="setting_top">设置</string>
+    <string name="setting_help">帮助</string>
+    <string name="setting_about">关于</string>
+    
+    
+       <!-- bbs -->
+     <string name="bbs_top_title">问答区</string>
+     <string name="bbs_top_right_title">我的帖子</string>
+     <string name="bbs_essence_posts">精华帖</string>
+     <string name="bbs_latest_release">人气帖</string>
+     <string name="bbs_last_post">最新发布</string>
+     <string name="bbs_ask_question">提问</string>
+     <string name="bbs_top_post">发帖</string>
+     <string name="btn_right_check_all">回复</string>
+     <string name="btn_right_reply">发帖</string>
+     <string name="btn_middle_title">查看全部</string>
+     
+     <!-- 收藏 -->
+         <string name="favorite_top_name">我的收藏</string>
+     <string name="favorite_teacher">名师</string>
+     <string name="favorite_video">视频</string>
+     <string name="favorite_read">阅读</string>
+     <string name="favorite_subjert">课程</string>
+     <string name="favorite_bbs">帖子</string>
+     
+     <!-- public -->
+     <string name="result_name">搜索结果</string>
+     
+     <!-- 个人专区 -->
+     <string name="user_info_top">个人专区</string>
+     <string name="user_info_account">账号：</string>
+     <string name="user_info_phone">手机：</string>
+     <string name="user_info_nickname">昵称：</string>
+     <string name="user_info_sex">性别：</string>
+     <string name="user_info_pass">密码：</string>
+     <string name="user_info_grade">等级：</string>
+     <string name="user_info_integration">积分：</string>
+     <string name="user_info_hobby">爱好：</string>
+     <string name="user_info_age">年龄：</string>
+     <string name="user_info_email">邮箱：</string>
+     <string name="user_info_curriculum">我的课程：</string>
+     <string name="user_info_editor">编辑</string>
+     
+     <!-- 签到 -->
+      <string name="sign_title">签    到</string>
+      <string name="sign_my">我的签到</string>
+      <string name="sign_nearby">附近签到</string>
+      <string name="sign_ranking">排行榜</string>
+     <!-- 意见反馈 -->
+     <string name="feedback_title">意见反馈 </string>
+      <string name="feedback_type">意见类型</string>
+      <string name="feedback_hint_text">给点意见，说点什么吧...</string>
+      <string name="feedback_hi_m">请填写您的姓名、手机或邮箱等</string>
+      <string name="feedback_submit">提交</string>
+      <!-- 消息 -->
+      <string name="msg_title">消息</string>
+      
+      
+      <!-- 列表 -->
+      <string name="listview_header_hint_normal">下拉刷新</string>
+    <string name="listview_header_hint_ready">松开刷新数据</string>
+    <string name="listview_header_hint_loading">正在加载...</string>
+    <string name="loading">加载中……</string>
+    <string name="listview_header_last_time">上次更新时间：</string>
+    <string name="listview_footer_hint_normal">点击查看更多</string>
+    <string name="listview_footer_hint_ready">松开载入更多</string>	
+      
+    <string name="t_loding_failed">加载失败</string>
+      
+    <string name="data_loding">数据加载中……</string>
+    <string name="data_loding_failed">数据加载失败</string>
+    <string name="data_loding_successful">数据加载成功</string>
+    <string name="data_loding_no_data">非常抱歉 没有你想要的数据！</string>
+    
+    
+</resources>

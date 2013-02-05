@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+   	 	android:orientation="horizontal"
+   	 	android:layout_alignParentLeft="true"
+   	 	android:layout_alignParentBottom="true"
+   	 	android:background="@color/menubg" >
+   	 	
+    <ImageView
+            android:id="@+id/left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/left_btn"
+            android:visibility="invisible"
+             />
+    
+
+    <LinearLayout
+        android:id="@+id/menu_layear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+		
+        <LinearLayout 
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	   	 	android:orientation="vertical"
+	   	 	android:layout_marginLeft="10dp"
+	   	 	android:layout_marginBottom="5dp"
+		    android:layout_marginTop="8dp"
+	    	android:id="@+id/layear1">
+        	<ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:src="@drawable/unicom_business" />
+
+        	<TextView
+        	    android:id="@+id/text1"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="center"
+        	    android:text="网上营业厅"
+        	    android:textColor="@color/white"
+        	    android:textSize="13sp" />
+"
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	   	 	android:orientation="vertical"
+	   	 	android:layout_marginLeft="15dp"
+	   	 	android:layout_marginBottom="5dp"
+		    android:layout_marginTop="8dp"
+	    	android:id="@+id/layear2">
+        	<ImageView
+		        android:id="@+id/imageView2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:src="@drawable/wo_news" />
+
+        	<TextView
+        	    android:id="@+id/text1"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="center"
+        	    android:text="沃派资讯"
+        	    android:textColor="@color/white"
+        	    android:textSize="13sp" />
+
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	   	 	android:orientation="vertical"
+	   	 	android:layout_marginLeft="15dp"
+	   	 	android:layout_marginBottom="5dp"
+		    android:layout_marginTop="8dp"
+	    	android:id="@+id/layear3">
+        	<ImageView
+		        android:id="@+id/imageView3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:src="@drawable/unicom_17wo" />
+
+        	<TextView
+        	    android:id="@+id/text1"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="center"
+        	    android:text="联通17沃"
+        	    android:textColor="@color/white"
+        	    android:textSize="13sp" />
+
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	   	 	android:orientation="vertical"
+	   	 	android:layout_marginLeft="15dp"
+	   	 	android:layout_marginRight="10dp"
+	   	 	android:layout_marginBottom="5dp"
+		    android:layout_marginTop="8dp"
+	    	android:id="@+id/layear4">
+        	<ImageView
+		        android:id="@+id/imageView4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:src="@drawable/wo_area" />
+
+        	<TextView
+        	    android:id="@+id/text1"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="center"
+        	    android:text="沃门户"
+        	    android:textColor="@color/white"
+        	    android:textSize="13sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+            android:id="@+id/right_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_btn"
+            android:visibility="invisible"
+             />
+</RelativeLayout> 

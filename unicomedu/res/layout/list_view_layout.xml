@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:layout_width="fill_parent">
+	<erb.unicomedu.ui.PullToRefreshListView
+		style="@style/list_view_style" android:id="@+id/obj_list"
+		android:layout_height="fill_parent" android:layout_width="fill_parent"></erb.unicomedu.ui.PullToRefreshListView>
+	<erb.unicomedu.ui.LoadingView android:id="@+id/data_loading"
+		android:layout_height="fill_parent" android:layout_width="fill_parent">
+	</erb.unicomedu.ui.LoadingView>
+</FrameLayout>

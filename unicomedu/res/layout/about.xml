@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:background="@color/white"
+		 android:orientation="vertical">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_info_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerInParent="true"
+				android:text="@string/setting_about" android:textColor="@color/white"
+				android:textSize="24sp" />
+		</RelativeLayout>
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<ImageView android:id="@+id/im_logo" android:layout_width="100dip"
+				android:layout_height="100dip" android:src="@drawable/icon"
+				android:layout_centerHorizontal="true" android:layout_marginTop="10dip" />
+			<LinearLayout android:id="@+id/viewGroup"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true" android:layout_marginBottom="10dip"
+				android:layout_marginTop="10dip" android:paddingLeft="10dip"
+				android:paddingRight="10dip" android:layout_below="@id/im_logo"
+				android:gravity="center" android:orientation="horizontal">
+				<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:scrollbars="vertical" android:fadingEdge="vertical">
+					<TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true" android:textColor="@color/text_color_info"
+						android:text="@string/ei_info" android:textSize="18sp" />
+				</ScrollView>
+			</LinearLayout>
+		</RelativeLayout>
+	</LinearLayout>
+
+
+
+</RelativeLayout>

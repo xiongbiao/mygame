@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFBF4"
+    android:orientation="vertical" >
+    <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="@style/title_bar"
+		android:id="@+id/title_bar">
+		<ImageButton 
+		    android:id="@+id/title_back"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true" 
+			android:background="@drawable/button_background_back" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/setting_top"
+			android:textColor="#fff" 
+			android:textSize="24sp"
+			android:layout_centerInParent="true" />
+	</RelativeLayout>
+    <LinearLayout android:id="@+id/setting_content"
+		android:layout_width="fill_parent" 
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:padding="20dip"
+	>
+    	 
+		<RelativeLayout 
+		    android:id="@+id/setting_login"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/setting_edit_layer"
+			android:layout_marginTop="0dip"
+			android:background="@drawable/setting_item_bg"
+		>
+		    <TextView 
+		        android:id="@+id/tv_userinfo"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				style="@style/setting_left"
+				android:text="登录或注册"
+		    />
+		    <ImageView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				 style="@style/setting_right"
+			/>
+				
+		</RelativeLayout>
+		 
+		<RelativeLayout
+		    android:id="@+id/setting_feedback"
+		    style="@style/setting_edit_layer"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/setting_item_bg">
+			 
+		    <TextView 
+		        android:id="@+id/tv_feedback"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				 style="@style/setting_left"
+				android:text="意见反馈"
+		    />
+		    <ImageView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				 style="@style/setting_right"
+			/>
+				
+		</RelativeLayout>
+		
+		<!-- <RelativeLayout
+		    android:id="@+id/setting_history"
+		    style="@style/setting_edit_layer"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/setting_item_bg">
+			 
+		    <TextView 
+		        android:id="@+id/tv_history"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				 style="@style/setting_left"
+				android:text="浏览记录"
+		    />
+		    <ImageView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				 style="@style/setting_right"
+			/>
+		</RelativeLayout> -->
+		
+		<RelativeLayout 
+		    android:id="@+id/setting_help"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/setting_edit_layer"
+			android:background="@drawable/setting_item_bg"
+		>
+			 
+		    <TextView 
+		        android:id="@+id/tv_help"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				 style="@style/setting_left"
+				android:text="使用帮助"
+		    />
+		    <ImageView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				 style="@style/setting_right"
+			/>
+				
+		</RelativeLayout>
+		<RelativeLayout 
+		    android:id="@+id/setting_about"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/setting_edit_layer"
+			android:background="@drawable/setting_item_bg"
+		>
+			 
+		    <TextView 
+		        android:id="@+id/tv_about"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				 style="@style/setting_left"
+				android:text="关   于"
+		    />
+		    <ImageView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				 style="@style/setting_right"
+			/>
+				
+		</RelativeLayout>
+        
+		 
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:id="@+id/top" android:layout_width="match_parent"
+		android:layout_height="fill_parent"  
+		android:layout_marginBottom="60dip" android:clickable="true"
+		android:orientation="vertical" android:background="#FEFBF4">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_top_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:id="@+id/obj_top_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerInParent="true" android:text="@string/exam_result_top"
+				android:textColor="@color/white" android:textSize="24sp" />
+		</RelativeLayout>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="197dip" android:orientation="vertical"
+			android:gravity="center" >
+			<ImageView android:id="@+id/obj_info_iv"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/examing_result_ok"   />
+		</LinearLayout>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:gravity="center"  >
+			<TextView android:id="@+id/obj_info_py"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="恭喜您，以优异的成绩通过考试！" android:textColor="#73BF17"
+				android:textSize="20sp" />
+		</LinearLayout>
+         <LinearLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:layout_marginTop="20dip"
+			android:gravity="center"  >
+			<TextView android:id="@+id/obj_info_scores"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="考试成绩：100"  
+				android:textSize="16sp" />
+			<TextView android:id="@+id/obj_result_time"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginTop="5dip"
+				android:text="答题时间：100"  
+				android:textSize="16sp" />
+		</LinearLayout>
+		 
+
+	</LinearLayout>
+	<RelativeLayout android:layout_width="match_parent"
+		android:layout_height="60dip"  
+		android:gravity="center" android:background="@drawable/ex_b_bg"
+		android:layout_alignParentBottom="true">
+		<Button android:id="@+id/wrong_questions" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/see_wrong_questions"
+			android:layout_marginLeft="20dip"
+			android:layout_alignParentLeft="true"
+			android:textColor="#7F7130"   />
+		 
+		<Button android:id="@+id/ex_back" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/ex_back"
+			android:layout_marginRight="20dip"
+			android:layout_alignParentRight="true"
+			android:textColor="#7F7130"  />
+	</RelativeLayout>
+</RelativeLayout>

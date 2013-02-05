@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dip"
+    android:background="@drawable/subject_item_bg"
+    android:padding="10dip"
+    android:gravity="center"
+    android:orientation="horizontal" >
+	
+   
+    <RelativeLayout 
+    	android:layout_width="fill_parent"    
+    	android:layout_height="fill_parent"
+    >
+        <TextView 
+            android:id="@+id/item_title"
+        	android:layout_width="wrap_content"    
+        	android:layout_height="wrap_content"   
+        	android:text="校区名称" 
+        	android:textColor="@color/text_color_title"
+        	android:textSize="14sp"
+            android:layout_alignParentTop="true"        />
+        
+        <TextView 
+            android:id="@+id/item_author"
+        	android:layout_width="wrap_content"    
+        	android:layout_height="wrap_content"   
+        	android:text="36人" 
+        	android:textColor="@color/text_color_field_content"
+        	android:textSize="14sp"
+        	android:layout_toRightOf = "@id/item_title"
+        	android:layout_marginLeft="5dip"
+        	android:layout_alignParentTop="true"
+        />
+        <TextView 
+            android:id="@+id/item_level"
+        	android:layout_width="wrap_content"    
+        	android:layout_height="wrap_content"   
+        	android:text="价格：3000￥" 
+        	android:textColor="@color/text_color_field_content"
+        	android:textSize="14sp"
+        	android:layout_centerVertical="true"
+        />
+         <TextView 
+            android:id="@+id/item_time"
+        	android:layout_width="wrap_content"    
+        	android:layout_height="wrap_content"   
+        	android:text="时间：9-3 - 10 、30" 
+        	android:textColor="@color/text_color_field_content"
+        	android:textSize="14sp"
+        	android:layout_marginLeft="10dip"
+        	android:layout_centerVertical="true"
+        	android:layout_toRightOf="@id/item_level"
+        />
+        <TextView 
+            android:id="@+id/item_address"
+        	android:layout_width="wrap_content"    
+        	android:layout_height="wrap_content"   
+        	android:text="地址：北京路" 
+        	android:textColor="@color/text_color_field_content"
+        	android:textSize="14sp"
+        	android:layout_alignParentBottom="true"
+        />
+        
+      
+        
+        <ImageView 
+       	    android:id="@+id/item_gps"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content" 
+        	android:src="@drawable/place_address" 
+        	android:layout_marginRight="10dip"
+        	android:layout_alignParentRight="true"
+        	android:layout_alignParentTop="true"
+        />
+        
+        <Button 
+		       android:id = "@+id/online_reg_filter"
+		         	android:layout_width = "wrap_content"
+		         	android:layout_height="wrap_content"
+		         	android:layout_alignParentBottom="true"
+		         	android:layout_alignParentRight="true"
+		         	android:text="@string/filter_sign_up"
+		         	android:textColor="#fff"
+		         	android:background="@drawable/button_background_3" />
+          <!-- <TextView 
+            android:id="@+id/item_number"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"   
+        	android:text="300次" 
+        	android:textColor="#C7D4E5"
+        	android:textSize="14sp"
+        	android:layout_toLeftOf = "@id/item_love"
+        	android:layout_marginRight="5dip"
+        	android:layout_alignParentTop="true"
+        /> -->
+    </RelativeLayout>
+</LinearLayout>

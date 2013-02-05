@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:orientation="vertical"  >
+        <RelativeLayout
+            android:id="@+id/obj_info_tab"
+            style="@style/title_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <ImageButton
+                android:id="@+id/obj_info_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/button_background_back" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/setting_help"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+            
+        </RelativeLayout>
+
+		 
+		
+		   
+		       
+		    <RelativeLayout  
+		        android:layout_width="fill_parent"  
+		        android:layout_height="wrap_content"  
+		        android:orientation="vertical" >
+		      
+		    <LinearLayout  
+		        android:id="@+id/viewGroup"  
+		        android:layout_width="fill_parent"  
+		        android:layout_height="wrap_content"  
+		        android:layout_alignParentBottom="true"  
+		        android:layout_marginBottom="30dp"  
+		        android:paddingLeft="10dip"
+		        android:paddingRight="10dip"
+		        android:gravity="center"  
+		        android:orientation="horizontal" >  
+		        <!-- <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/page_indicator_focused"
+		        />
+		        <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dip"
+		        android:src="@drawable/page_indicator_focused"
+		        /> -->
+		    </LinearLayout>  
+		       <android.support.v4.view.ViewPager
+		        android:id="@+id/guidePages"
+		        android:layout_above="@id/viewGroup"
+		        android:layout_width="fill_parent"
+		        android:layout_margin="10dip"
+		        android:layout_height="wrap_content"/>
+		    </RelativeLayout>
+		
+		 
+         
+    </LinearLayout>
+
+</RelativeLayout>

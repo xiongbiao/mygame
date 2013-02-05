@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/filter_expand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/list_item_bg"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/sgin_tab"
+                style="@style/title_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/sign_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_background_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/sign_title"
+                    android:textColor="#fff"
+                    android:textSize="24sp" />
+
+                <ImageButton
+                    android:id="@+id/sign_ranking_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/sign_ranking_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sign_xq"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FEFBF4"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="20dip" >
+
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/sgin_left_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/sgin_info_campus_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dip"
+                        android:text=""
+                        android:textColor="@color/text_color_title"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="5dip"
+                        android:background="@drawable/background_repeat" />
+
+                    <TextView
+                        android:id="@+id/sgin_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:text=""
+                        android:textColor="@color/text_color_field_content"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/bt_sign"
+                            android:layout_width="200dip"
+                            android:layout_height="35dip"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="20dip"
+                            android:background="@drawable/button_background_3"
+                            android:text="@string/sign_title"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="top"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/sgin_info_button_bar"
+                        style="@style/eduins_traffic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dip"
+                        android:background="@drawable/video_filter_bar" />
+
+                    <LinearLayout
+                        android:id="@+id/sgin_ll_xqjs"
+                        android:layout_width="match_parent" android:layout_height="fill_parent"
+                        android:layout_below="@+id/sgin_info_button_bar"
+                        android:orientation="vertical"
+                        >
+                        <include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/filter_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
+                        android:background="@drawable/button_4"
+                        android:paddingLeft="4dip"
+                        android:paddingRight="4dip"
+                        android:text="@string/sign_my"
+                        android:textColor="@color/text_color_green"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/filter_xqcx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/filter_info"
+                        android:background="@drawable/button_4_uncheck"
+                        android:paddingLeft="4dip"
+                        android:paddingRight="4dip"
+                        android:text="@string/sign_nearby"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

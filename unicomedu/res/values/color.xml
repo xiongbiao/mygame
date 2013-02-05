@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="background">#FF000000</color>
+	<color name="control_back">#412d2d2d</color>
+	<color name="dialog_back">#330000FF</color>
+	<color name="translucent">#0000</color>
+	<color name="background_white">#FFFF</color>
+	<color name="transparent_background">#A0000000</color>
+	<color name="text_color_orange">#ff9900</color>
+	<color name="text_color_green">#30A102</color>
+	<color name="text_color_2">#F9AD59</color>
+	<color name="text_color_3">#FCC672</color>
+	
+	<color name="text_color_title">#ff9900</color>
+	<color name="text_color_author">#5F5E5C</color>
+	<color name="text_color_info">#5F5E5C</color>
+	<color name="text_color_field_content">#5F5E5C</color>
+	<color name="text_color_num">#AFAFAF</color>
+	<color name="list_color_even">#9BC5EE</color>
+	<color name="list_color_odd">#668193</color>
+	<color name="list_selector_color">#fc9999</color>
+	
+	
+	 <color name="alpha">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="color_l">#AEA782</color>
+    <color name="color_2">#8C814A</color>
+    
+    
+     <color name="transparent">#00000000</color>
+    <color name="text_num_gray">#333</color>
+    <color name="dialog_title_blue">#9CCCF7</color>
+    
+    <color name="blue">#0000FF</color>
+    <color name="red">#FF0000</color>
+    <color name="grey">#DBDBDB</color>
+    <color name="grey_1">#F8F6F7</color>
+    <color name="btnColor">#7CCD7C</color>
+    
+    <!--             -->
+    <color name="white">#F8FBFB</color>
+
+
+
+    <!--  -->
+	<color name="content_text">#F90310</color>
+	
+    <color name="green">#9cfda3</color>
+    <color name="gray">#050505</color>
+    <color name="gold">#b89766</color>
+    
+    <color name="black75">#ff404040</color>
+    <color name="black90">#ff191919</color>
+    
+    <color name="listline">#DADADA</color>
+    <color name="menubg">#43E292</color>
+    
+    <color name="seekbar_bg_top">#3c000000</color>
+    <color name="seekbar_bg_middle">#3c393939</color>
+    <color name="seekbar_bg_bottom">#3cdddddd</color>
+    <color name="seekbar_pros_top">#32f3f3f3</color>
+    <color name="seekbar_pros_middle">#32b8b7b7</color>
+    <color name="seekbar_pros_bottom">#321c1c1c</color>
+    
+    
+    <color name="bbs_title">#ff9900</color>
+    <color name="bbs_ask">#FEFBF4</color>
+</resources>

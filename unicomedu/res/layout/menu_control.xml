@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <SlidingDrawer
+        android:id="@+id/menu_control_sliding"
+        android:layout_width="280dp"
+        android:layout_height="190dp"
+   
+        android:layout_centerHorizontal="true"
+        android:content="@+id/menu_control_content"
+        android:handle="@+id/menu_control_handle"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/menu_control_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/menu_control_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/menu_control_relate_level3"
+                android:layout_width="280dp"
+                android:layout_height="140dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:background="@drawable/level3" >
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginLeft="12dip"
+                    android:background="@drawable/channel1" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/menu_control_level3_but1"
+                    android:layout_marginBottom="12dip"
+                    android:layout_marginLeft="28dip"
+                    android:background="@drawable/channel2" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/menu_control_level3_but2"
+                    android:layout_marginBottom="8dip"
+                    android:layout_marginLeft="6dip"
+                    android:layout_toRightOf="@+id/menu_control_level3_but2"
+                    android:background="@drawable/channel3" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="6dip"
+                    android:background="@drawable/channel4" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/menu_control_level3_but6"
+                    android:layout_marginBottom="8dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_toLeftOf="@+id/menu_control_level3_but6"
+                    android:background="@drawable/channel5" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/menu_control_level3_but7"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12dip"
+                    android:layout_marginRight="28dip"
+                    android:background="@drawable/channel6" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level3_but7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginRight="12dip"
+                    android:background="@drawable/channel7" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu_control_relate_level2"
+                android:layout_width="180dp"
+                android:layout_height="90dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:background="@drawable/level2" >
+
+                <ImageButton
+                    android:id="@+id/menu_control_level2_but1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="6dip"
+                    android:background="@drawable/icon_menu" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level2_but2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/icon_search" />
+
+                <ImageButton
+                    android:id="@+id/menu_control_level2_but3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/icon_myyouku" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/menu_control_relate_level1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+                <ImageButton
+                    android:id="@+id/menu_control_level1_but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/home_bg" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </SlidingDrawer>
+</RelativeLayout>

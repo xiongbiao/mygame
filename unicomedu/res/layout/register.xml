@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/wind"
+    android:orientation="vertical" >
+    <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="@style/title_bar"
+		android:id="@+id/title_bar">
+		<ImageButton 
+		    android:id="@+id/title_back"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true" 
+			android:background="@drawable/button_background_back" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/register_title_name"
+			android:textColor="#fff" 
+			android:textSize="24sp"
+			android:layout_centerInParent="true" />
+	</RelativeLayout>
+    <LinearLayout android:id="@+id/register_content"
+		android:layout_width="fill_parent" 
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:padding="20dip"
+		android:layout_marginTop="-30dip"
+	>
+    	<!-- username -->
+    	
+		<LinearLayout 
+		    android:id="@+id/register_content_name_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_top_round"
+		>
+			<ImageView 
+			    android:id="@+id/register_name_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/reg_name"
+				android:layout_marginRight="10dip"
+			/>
+
+		    <EditText
+		        android:id="@+id/register_name"
+		        style="@style/register_name"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:imeOptions="actionNext" 
+		        android:singleLine="true"
+		        android:maxLength="11"/>
+
+		</LinearLayout>
+        <!-- email -->
+		<LinearLayout 
+		    android:id="@+id/register_content_email_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_orther_rectangular"
+		>
+			<ImageView 
+			    android:id="@+id/register_email_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/reg_email"
+				android:layout_marginRight="10dip"
+			/>
+
+		    <EditText
+		        android:id="@+id/register_email"
+		        style="@style/register_email"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:imeOptions="actionNext" 
+		        android:singleLine="true"/>
+
+		</LinearLayout>
+        <!-- password -->
+		<LinearLayout 
+		    android:id="@+id/register_content_password_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_bottom_round"
+			android:layout_marginBottom="60dip"
+		>
+			<ImageView 
+			    android:id="@+id/register_password_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/reg_pass"
+				android:layout_marginRight="10dip"
+			/>
+
+		    <EditText
+		        android:id="@+id/register_password"
+		        style="@style/register_password"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:imeOptions="actionDone" 
+		        android:singleLine="true"/>
+
+		</LinearLayout>
+        
+		<Button 
+		    android:id="@+id/register_submit"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+		    android:layout_margin="10dip"
+		    android:text="@string/register_submit"
+		    android:background="@drawable/button_background_2" 
+			/>
+    </LinearLayout>
+</LinearLayout>

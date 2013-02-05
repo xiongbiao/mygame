@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:id="@+id/top" android:layout_width="match_parent"
+		android:layout_height="fill_parent" android:background="@color/white"
+		android:layout_marginBottom="60dip" android:clickable="true"
+		android:orientation="vertical">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_top_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:id="@+id/obj_top_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerInParent="true" android:text="@string/exam_info_top"
+				android:textColor="@color/white" android:textSize="24sp" />
+		</RelativeLayout>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="30dip" android:orientation="vertical"
+			android:gravity="center" android:background="#E8F09A">
+			<TextView android:id="@+id/obj_info_time"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="#F5B921" android:textSize="16sp" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="60dip" android:orientation="vertical"
+			android:gravity="center" android:background="#F8F7F2">
+			<TextView android:id="@+id/obj_info_introduce"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="#F97E05" android:textSize="16sp" />
+		</LinearLayout>
+		<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:scrollbars="vertical" android:fadingEdge="vertical">
+			<LinearLayout android:layout_width="fill_parent"
+				android:orientation="vertical" android:gravity="center"
+				android:id="@+id/exam_subject_content" android:background="#fff"
+				android:layout_height="fill_parent">
+			</LinearLayout>
+		</ScrollView>
+
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="60dip" android:orientation="horizontal"
+		android:gravity="center" android:background="#E5E1E2"
+		android:layout_alignParentBottom="true">
+		<Button android:id="@+id/filter_latest" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/exam_previous"
+			android:textColor="#7F7130" />
+		<Button android:id="@+id/filter_popularity"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textColor="#fff" android:background="@drawable/filter_but_c_s"
+			android:text="交卷" />
+		<Button android:id="@+id/filter_price" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/exam_next"
+			android:textColor="#7F7130" />
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <erb.unicomedu.ui.FilterExpand
+        android:id="@+id/filter_expand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/list_item_bg"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/title_bar" >
+                <ImageButton
+                    android:id="@+id/eduins_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_background_back" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="区域"
+                    android:textColor="#fff"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+            <!-- <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/filter_bar"
+                android:gravity="center"
+                android:padding="10dip" >
+
+                <Button
+                    android:id="@+id/filter_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/filter_but"
+                    android:text="简介" />
+
+                <Button
+                    android:id="@+id/filter_xqcx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/filter_but"
+                    android:text="校区" />
+            </LinearLayout> -->
+
+            <!-- <LinearLayout
+                android:id="@+id/edu_ll_info"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ei_logo_bg"
+                    android:gravity="center"
+                    android:padding="20dip" >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ei_logo" />
+                    
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center" 
+                    android:layout_marginTop="30dp"
+                    android:padding="20dip" >
+                     <TextView  android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="@string/ei_info" 
+                    />
+                </LinearLayout>
+              
+            </LinearLayout> -->
+              <LinearLayout
+                android:id="@+id/edu_ll_xqjs"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" 
+                android:background="#fff"
+                >
+                <include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+              </LinearLayout>
+        </LinearLayout>
+    </erb.unicomedu.ui.FilterExpand>
+
+    <erb.unicomedu.ui.MenuControl
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

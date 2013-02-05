@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:orientation="vertical"
+		android:id="@+id/filter_expand">
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="match_parent" android:background="@drawable/list_item_bg"
+			android:clickable="true" android:orientation="vertical">
+			<RelativeLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="@style/title_bar">
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/teacher_top"
+					android:textColor="#fff" android:textSize="24sp"
+					android:layout_centerInParent="true" />
+				<ImageButton android:id="@+id/teacher_search"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true" android:background="@drawable/button_background_search" />
+			</RelativeLayout>
+			<LinearLayout android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:padding="10dip"
+				android:gravity="center" android:background="@drawable/filter_bar">
+				<Button android:id="@+id/filter_latest" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:background="@drawable/filter_but_l_s"
+					android:textColor="#fff" android:text="@string/filter_jin" />
+				<Button android:id="@+id/filter_popularity"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="#7F7130" android:background="@drawable/filter_but_c"
+					android:text="@string/filter_popularity" />
+				<Button android:id="@+id/filter_price" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:background="@drawable/filter_but_r"
+					android:textColor="#7F7130" android:text="@string/filter_xingji" />
+			</LinearLayout>
+			<include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+		</LinearLayout>
+	</LinearLayout>
+	<erb.unicomedu.ui.MenuControl
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true" />
+</RelativeLayout>

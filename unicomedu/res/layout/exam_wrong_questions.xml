@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:id="@+id/top" android:layout_width="match_parent"
+		android:layout_height="fill_parent" android:background="@color/white"
+		android:clickable="true" android:orientation="vertical">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_top_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:id="@+id/obj_top_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerInParent="true" android:text="@string/exam_info_w_q"
+				android:textColor="@color/white" android:textSize="24sp" />
+		</RelativeLayout>
+
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="60dip" android:orientation="vertical"
+			android:gravity="center" android:background="#F8F7F2">
+			<TextView android:id="@+id/obj_info_introduce"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="01:cool 中文意思？" android:textColor="#F97E05"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+		<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:background="#fff" android:scrollbars="vertical"
+			android:fadingEdge="vertical">
+			<LinearLayout android:layout_width="fill_parent"
+				android:orientation="vertical" android:gravity="center"
+				android:id="@+id/exam_subject_content" android:background="#fff"
+				android:layout_height="wrap_content">
+			</LinearLayout>
+		</ScrollView>
+
+		<RelativeLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:layout_marginBottom="60dip"
+			android:padding="10dip" android:gravity="center">
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_alignParentTop="true"
+				android:id="@+id/ex_sm_top" android:background="@drawable/ex_sm_top_bg" />
+
+			<ImageView android:layout_width="wrap_content" android:id="@+id/ex_sm_bottom"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true" android:background="@drawable/ex_sm_b_bg" />
+			<LinearLayout android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:layout_below="@id/ex_sm_top" android:layout_above="@id/ex_sm_bottom"
+				android:orientation="vertical" android:id="@+id/ex_sm_center"
+				android:background="@drawable/ex_sm_c_bg">
+				<TextView android:layout_width="wrap_content" android:id="@+id/ex_sm_da"
+					android:layout_height="wrap_content" android:layout_marginLeft="10dip"
+					android:text="问题解析说明:" />
+				<TextView android:id="@+id/ex_sm_remark"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_marginLeft="10dip" android:layout_marginTop="10dip"
+					android:text="这是一个简单的问题" />
+			</LinearLayout>
+		</RelativeLayout>
+	</LinearLayout>
+
+	<RelativeLayout android:layout_width="match_parent"
+		android:layout_height="60dip" android:gravity="center"
+		android:background="@drawable/ex_b_bg" android:id="@+id/ex_b"
+		android:layout_alignParentBottom="true">
+		<Button android:id="@+id/ex_w_p" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/ex_w_q_p"
+			android:layout_marginLeft="20dip" android:layout_alignParentLeft="true" />
+
+		<Button android:id="@+id/ex_w_n" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@drawable/ex_w_q_n"
+			android:layout_marginRight="20dip" android:layout_alignParentRight="true" />
+	</RelativeLayout>
+
+
+</RelativeLayout>

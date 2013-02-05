@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<LinearLayout android:id="@+id/layout_top"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="fill_parent" android:padding="5dip"
+			android:gravity="center">
+			<ImageView android:layout_width="40dip"
+				android:layout_height="40dip" android:id="@+id/image" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="185dip"
+			android:layout_height="fill_parent" android:padding="5dip"
+			android:orientation="vertical">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/name"
+				android:maxLines="1" style="@style/text_big" />
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/introdu"
+				style="@style/text_smare" android:maxLines="1" />
+
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="fill_parent" android:padding="5dip" android:layout_alignParentRight="true"
+				android:layout_marginRight="4dip">
+			<Button android:layout_width="40dip" android:layout_height="40dip"
+			    android:layout_alignParentRight="true"
+				android:layout_marginRight="4dip"
+				android:id="@+id/btn" android:gravity="center"   />
+		</LinearLayout>
+	</LinearLayout>
+	<RelativeLayout android:layout_below="@id/layout_top"
+		android:layout_width="fill_parent" android:layout_height="60dip"
+		android:padding="5dip" android:orientation="vertical">
+		<TextView android:layout_width="230dip"
+			android:layout_height="wrap_content" android:id="@+id/address"
+			android:maxLines="1" style="@style/text_smare" />
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/call"
+			android:layout_below="@id/address" style="@style/text_smare"
+			android:maxLines="1" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/teleph"
+			android:maxLines="1" android:layout_toRightOf="@id/call"
+			android:layout_marginLeft="8dip" android:layout_marginTop="2dip"
+			android:layout_below="@id/address" style="@style/text_smare" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/telephtwo"
+			android:layout_below="@id/address" style="@style/text_smare"
+			android:layout_marginLeft="10dip" android:layout_marginTop="2dip"
+			android:layout_toRightOf="@id/teleph" android:maxLines="1" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/far"
+			android:layout_alignParentRight="true" android:layout_marginRight="8dip"
+			style="@style/text_smare" />
+	</RelativeLayout>
+</RelativeLayout>

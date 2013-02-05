@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+    <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="@style/title_bar"
+		android:id="@+id/title_bar">
+		<ImageButton 
+		    android:id="@+id/title_back"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true" 
+			android:background="@drawable/button_background_back" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/online_register_title_name"
+			android:textColor="#fff" 
+			android:textSize="24sp"
+			android:layout_centerInParent="true" />
+	</RelativeLayout>
+    <LinearLayout android:id="@+id/register_content"
+		android:layout_width="fill_parent" 
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:padding="20dip"
+	>
+    	<!-- username -->
+		<LinearLayout 
+		    android:id="@+id/register_content_name_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_top_round"
+		>
+			<ImageView 
+			    android:id="@+id/register_name_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/enrollment_classes"
+				android:layout_marginRight="10dip"
+			/>
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="@string/online_registration_class"
+				android:layout_marginRight="2dip"
+				android:textSize="14sp"
+				android:textColor="@color/black"
+				/>
+		    <TextView android:id="@+id/register_class"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				style="@style/online_register_name"
+				android:textSize="14sp"
+				android:textColor="@color/text_color_field_content"
+				/>
+		</LinearLayout>
+        <!-- Student Name -->
+		<LinearLayout 
+		    android:id="@+id/register_content_email_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_orther_rectangular"
+		>
+			<ImageView 
+			    android:id="@+id/register_email_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/reg_name"
+				android:layout_marginRight="10dip"
+				
+			/>
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="@string/online_registration_stu_name"
+				android:textColor="@color/black"
+				android:layout_marginRight="2dip"
+				android:textSize="14sp"
+				/>
+		    <EditText android:id="@+id/register_user_name"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				style="@style/online_register_user_name"
+				android:textColor="@color/text_color_field_content"
+				android:textSize="14sp"
+				/>
+		</LinearLayout>
+		 <!-- tel -->
+		<LinearLayout 
+		    android:id="@+id/register_content_email_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_orther_rectangular"
+		>
+			<ImageView 
+			    android:id="@+id/register_password_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/o_r_tel"
+				android:layout_marginRight="10dip"
+			/>
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="@string/online_registration_stu_call"
+				android:textColor="@color/black"
+				android:layout_marginRight="2dip"
+				android:textSize="14sp"
+				/>
+		    <EditText android:id="@+id/register_call"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				style="@style/online_register_call"
+				android:textColor="@color/text_color_field_content"
+				android:textSize="14sp"
+				/>
+		</LinearLayout>
+		
+        <!-- password -->
+		<LinearLayout 
+		    android:id="@+id/register_content_password_layer"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			style="@style/register_edit_layer"
+			android:background="@drawable/background_bottom_round"
+			android:layout_marginBottom="60dip"
+		>
+			<ImageView 
+			    android:id="@+id/register_password_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"    
+				android:src="@drawable/place"
+				android:layout_marginRight="10dip"
+			/>
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:text="@string/online_registration_address"
+				android:textColor="@color/black"
+				android:layout_marginRight="2dip"
+				android:textSize="14sp"
+				/>
+		    	<Spinner android:id="@+id/category"
+					android:background="@drawable/drop_list"
+					android:layout_width="wrap_content"
+					android:layout_height="30dp"
+					android:layout_centerHorizontal="true"
+					android:textColor="@color/text_color_field_content"
+					android:textSize="14sp"
+			 />
+		</LinearLayout>
+        
+		<Button 
+		    android:id="@+id/register_submit"
+		    android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+		    android:layout_margin="10dip"
+		    android:text="提交"
+		    android:background="@drawable/button_background_2" 
+			/>
+    </LinearLayout>
+</LinearLayout>

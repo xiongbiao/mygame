@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="Campus_label_array">
+ <item>东口岸校区</item>
+ <item>西口岸校区</item>
+ <item>北口岸校区</item>
+ <item>南口岸校区</item>
+</string-array>
+</resources>

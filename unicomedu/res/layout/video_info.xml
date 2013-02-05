@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:background="@color/white"
+		android:orientation="vertical">
+
+		<RelativeLayout android:id="@+id/video_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+			<ImageButton android:id="@+id/video_info_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerInParent="true"
+				android:text="@string/video_info_top" android:textColor="@color/white"
+				android:textSize="24sp" />
+			<ImageButton android:id="@+id/video_rating_btn"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true" android:background="@drawable/button_background_7" />
+		</RelativeLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="match_parent" android:layout_height="150dip"
+			android:background="@drawable/item_bg" android:gravity="left"
+			android:orientation="vertical" android:padding="20dip">
+			<TextView android:id="@+id/video_info_name"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:text="读物名称" android:textColor="@color/text_color_title"
+				android:ellipsize="marquee" android:singleLine="true"
+				android:textSize="20sp" />
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_marginTop="5dip"
+				android:orientation="horizontal">
+				<ImageView android:id="@+id/item_avatar"
+					android:layout_width="115dip" android:layout_height="80dip"
+					android:layout_marginRight="20dip" android:background="@drawable/pho_bg"
+					android:padding="2dip" android:src="@drawable/avatar_icon" />
+
+				<RelativeLayout android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+					<TextView android:id="@+id/video_info_author"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignParentTop="true" android:text="作者: xiaoqiang"
+						android:layout_alignParentLeft="true" android:textColor="@color/text_color_field_content"
+						android:textSize="16sp" />
+					<LinearLayout android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:gravity="center_vertical"
+						android:layout_alignParentLeft="true"
+						android:layout_centerInParent="true">
+						<ImageView android:id="@+id/video_info_level_icon"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_marginLeft="3dip" android:src="@drawable/share_icon"
+							android:layout_marginTop="2dip" />
+						<TextView android:id="@+id/video_info_level"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_marginLeft="3dip" android:text=" : 300人已点播"
+							android:textColor="@color/text_color_field_content"
+							android:textSize="16sp" />
+					</LinearLayout>
+
+					<Button android:id="@+id/video_info_play"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:background="@drawable/button_background_5" android:text="@string/video_info_play"
+						android:layout_alignParentBottom="true" />
+				</RelativeLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="120dip" android:orientation="vertical"
+			android:padding="10dip" android:gravity="top">
+			<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:scrollbars="vertical" android:fadingEdge="vertical">
+				<TextView android:id="@+id/vidio_info_introduce"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="@color/text_color_field_content"
+					android:textSize="16sp" />
+			</ScrollView>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:background="@drawable/filter_bar"
+			android:gravity="left|center_vertical" android:paddingLeft="10dip">
+
+			<TextView android:id="@+id/filter_info"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/video_info_other" android:textColor="@color/color_2"
+				android:textSize="20sp" />
+		</LinearLayout>
+
+		<include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+	</LinearLayout>
+
+</RelativeLayout>

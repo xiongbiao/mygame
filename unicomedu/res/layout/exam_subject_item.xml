@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:layout_margin="5dip" style="@style/exam_info"  >
+	<ImageView android:id="@+id/iv_icon_a" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_centerVertical="true"
+		style="@style/exam_left" />
+	<TextView android:id="@+id/tv_exam_a" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_toRightOf="@id/iv_icon_a"
+		android:text="在我歌声里"
+		android:layout_centerInParent="true"
+		style="@style/exam_right" />
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:background="#fff"
+	 android:layout_height="60dip">
+	<ImageView android:id="@+id/sign_ranking_id_iv"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_centerVertical="true" 
+		android:layout_marginLeft="20dip" android:visibility="gone"
+		android:background="@drawable/ranking_first" />
+	<TextView android:id="@+id/sign_ranking_id_tv"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"  
+		android:layout_centerInParent="true"  
+		android:layout_alignParentLeft="true"
+		 android:textColor="#000" android:textSize="20sp"
+		android:layout_marginLeft="25dip"
+     />
+	<TextView android:layout_width="wrap_content"
+	    android:id="@+id/sign_ranking_name"
+		android:layout_height="wrap_content"  
+		android:textColor="@color/text_color_title" 
+		android:textSize="20sp"
+		android:layout_centerInParent="true" 
+		android:layout_marginTop="20dip"
+		android:layout_marginBottom="20dip"
+		/>
+	<TextView android:layout_width="wrap_content"
+	    android:id="@+id/sign_ranking_rank"
+		android:layout_height="wrap_content"  
+		android:textColor="@color/text_color_field_content" android:textSize="20sp"
+		android:layout_alignParentRight="true" 
+		android:layout_centerInParent="true" 
+		android:layout_marginRight="20dip"
+		/>
+
+</RelativeLayout>

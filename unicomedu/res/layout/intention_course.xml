@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:gravity="center" android:background="#fff" android:orientation="vertical">
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" style="@style/title_bar"
+		android:id="@+id/title_bar">
+		<Button android:id="@+id/title_skip" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/intention_course_title_skip"
+			android:layout_marginLeft="5dip" android:layout_centerVertical="true"
+			android:background="@drawable/button_background_3" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/intention_course_title_name"
+			android:textColor="#fff" android:textSize="24sp"
+			android:layout_centerInParent="true" />
+		<Button android:id="@+id/title_ok" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/intention_course_title_ok"
+			android:layout_centerVertical="true" android:layout_alignParentRight="true"
+			android:layout_marginRight="5dip" android:background="@drawable/button_background_3" />
+	</RelativeLayout>
+	<FrameLayout  android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		
+		
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="fill_parent" android:gravity="center"
+		android:layout_height="wrap_content" android:background="@drawable/filter_bar">
+		<ImageView android:id="@+id/h_left" android:layout_width="18dp"
+			android:layout_height="fill_parent"  
+			android:gravity="center" android:background="@drawable/intenttion_top_bg"
+			android:paddingRight="5dp"
+			android:paddingLeft="3dp"
+			android:src="@drawable/intention_left"
+			android:visibility="gone"
+			  />
+		<HorizontalScrollView android:id="@+id/intention_course_values_scroll"
+			android:background="@drawable/filter_bar" android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:layout_weight="1"
+			android:layout_gravity="center"
+			android:scrollbars="none">
+			<LinearLayout  
+				android:orientation="horizontal" android:id="@+id/intention_course_values" android:layout_height="fill_parent"
+				android:gravity="center" android:layout_width="fill_parent">
+				<!-- <TextView android:id="@+id/intention_course_select_empty"
+					android:text="@string/intention_course_select_empty"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="@color/black" android:layout_gravity="center"
+					android:background="@drawable/intention_course_select_bg" /> -->
+			</LinearLayout>
+		</HorizontalScrollView>
+		<ImageView android:id="@+id/h_right" android:layout_width="18dp"
+			android:layout_height="fill_parent"  
+			android:gravity="center" android:background="@drawable/intenttion_top_bg"
+			android:paddingLeft="5dp"
+			android:paddingRight="3dp"
+			android:src="@drawable/intention_right"
+			android:visibility="gone"
+			 />
+	</LinearLayout>
+	<TextView android:id="@+id/intention_course_select_empty"
+					android:text="@string/intention_course_select_empty"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="@color/black" android:layout_gravity="center"
+					android:layout_centerVertical="true"
+					  />
+</FrameLayout>
+	<erb.unicomedu.ui.KeywordsFlow
+		android:id="@+id/intention_course_keywordsFlow" android:layout_width="fill_parent"
+		android:layout_height="0dip" android:layout_weight="1" style="@style/keyword" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:gravity="center">
+
+		<Button android:id="@+id/intention_course_more"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/intention_course_more_hot" android:background="@drawable/more_popular_bg"
+			android:layout_marginBottom="15dip" android:textColor="#fff" />
+		<TextView android:padding="10dip" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/intention_course_surprise" />
+	</LinearLayout>
+</LinearLayout>

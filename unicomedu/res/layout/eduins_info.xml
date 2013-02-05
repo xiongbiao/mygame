@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<LinearLayout android:id="@+id/filter_expand"
+		android:layout_width="match_parent" android:orientation="vertical"
+		android:layout_height="match_parent">
+
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="match_parent" android:background="@drawable/list_item_bg"
+			android:orientation="vertical">
+			<RelativeLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="@style/title_bar">
+				<ImageButton android:id="@+id/title_back"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_centerInParent="true"
+					android:text="@string/ei_title" android:textColor="#fff"
+					android:textSize="24sp" />
+			</RelativeLayout>
+			<LinearLayout android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:orientation="vertical"
+				android:background="#fff" android:padding="10dip">
+				<TextView android:layout_width="wrap_content"
+					android:id="@+id/eduins_info_campus_name" android:layout_height="wrap_content"
+					android:textColor="@color/text_color_title" android:textSize="24sp" />
+				<ImageView android:layout_width="fill_parent"
+					android:background="@drawable/background_repeat"
+					android:layout_centerInParent="true" android:layout_height="wrap_content"
+					android:layout_margin="5dip" />
+				<RelativeLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<TextView android:id="@+id/eduins_info_address"
+						android:layout_width="wrap_content" android:layout_height="34dp"
+						android:text="地       址:" android:textColor="@color/black"
+						android:textSize="15sp" />
+
+					<TextView android:id="@+id/eduins_info_address_info"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp" android:layout_toRightOf="@id/eduins_info_address"
+
+						android:textColor="@color/text_color_field_content"
+						android:textSize="14sp" />
+
+					<TextView android:id="@+id/eduins_info_call"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_below="@id/eduins_info_address" android:text="咨询电话:"
+						android:textColor="@color/black" android:textSize="15sp" />
+
+					<TextView android:id="@+id/eduins_info_call_info"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignLeft="@id/eduins_info_address_info"
+						android:layout_below="@id/eduins_info_address" android:textColor="@color/text_color_field_content"
+						android:textSize="14sp" />
+
+					<TextView android:id="@+id/eduins_info_time"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignLeft="@id/eduins_info_address_info"
+						android:layout_below="@id/eduins_info_call" android:text="(周一至周五 ：9：00-18：00)"
+						android:textColor="@color/text_color_field_content"
+						android:visibility="gone" android:textSize="14sp" />
+
+					<TextView android:id="@+id/eduins_info_zykc"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignLeft="@id/eduins_info_call"
+						android:layout_below="@id/eduins_info_time" android:text="主要课程:"
+						android:textColor="@color/black" android:textSize="15sp" />
+
+					<TextView android:id="@+id/eduins_info_zykc_info"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignLeft="@id/eduins_info_address_info"
+						android:layout_below="@id/eduins_info_time" android:textColor="@color/text_color_field_content"
+						android:textSize="14sp" />
+
+				</RelativeLayout>
+			</LinearLayout>
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="0dip" android:layout_weight="1"
+				android:orientation="vertical" android:background="#fff"
+				android:gravity="top" android:padding="10dip" android:paddingLeft="20dip"
+				android:paddingBottom="20dip" android:paddingRight="20dip">
+				<RelativeLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<LinearLayout android:id="@+id/eduins_info_button_bar"
+						android:layout_width="match_parent" android:layout_height="wrap_content"
+						style="@style/eduins_traffic" android:layout_marginTop="3dip"
+						android:background="@drawable/eduis_info_top_bg" />
+					<LinearLayout android:id="@+id/edu_ll_info" style="@style/eduins_traffic"
+						android:layout_below="@+id/eduins_info_button_bar"
+						android:background="@drawable/eduis_info_bottom_bg"
+						android:layout_width="match_parent" android:layout_marginBottom="4dip"
+						android:layout_height="fill_parent">
+						<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+							android:layout_width="fill_parent" android:layout_height="wrap_content"
+							android:scrollbars="vertical" android:fadingEdge="vertical">
+							<TextView android:layout_width="fill_parent" android:id="@+id/tv_traffic"
+								android:layout_height="fill_parent" android:textColor="@color/text_color_field_content"
+								android:textSize="15sp" />
+						</ScrollView>
+					</LinearLayout>
+					<LinearLayout android:id="@+id/edu_ll_xqjs"
+						android:layout_below="@+id/eduins_info_button_bar"
+						android:layout_width="match_parent" android:layout_height="fill_parent"
+						style="@style/eduins_traffic" android:background="@drawable/eduis_info_bottom_bg"
+						android:layout_marginBottom="4dip" android:visibility="gone">
+						<FrameLayout android:layout_width="match_parent"
+						    android:background="#fff"
+							android:layout_height="match_parent">
+							<WebView android:id="@+id/wv_map" android:layout_width="fill_parent"
+								android:layout_height="fill_parent" android:visibility="gone"/>
+							<erb.unicomedu.ui.LoadingView android:id="@+id/data_loading"
+								android:layout_height="fill_parent" android:layout_width="fill_parent">
+							</erb.unicomedu.ui.LoadingView>
+						</FrameLayout>
+					</LinearLayout>
+					<Button android:id="@+id/filter_info" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:background="@drawable/button_4"
+						android:textColor="@color/text_color_orange" android:text="@string/ei_map_traffic"
+						android:layout_marginLeft="15dip" android:paddingLeft="4dip"
+						android:paddingRight="4dip" android:textSize="16sp" />
+					<Button android:id="@+id/filter_xqcx" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:background="@drawable/button_4_uncheck"
+						android:text="@string/ei_map_position" android:textColor="@color/black"
+						android:paddingLeft="4dip" android:paddingRight="4dip"
+						android:layout_toRightOf="@+id/filter_info" android:textSize="16sp" />
+				</RelativeLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 全屏显示主题 -->
+	<style name="fullscreen">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+	</style>
+
+	<!-- 顶部标题样式 -->
+	<style name="top_title">
+		<item name="android:textSize">26sp</item>
+		<item name="android:textColor">#ffffff</item>
+	</style>
+
+	<style name="text_big">
+		<item name="android:textSize">14dip</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+	<style name="text_big2">
+		<item name="android:textSize">14dip</item>
+		<item name="android:textColor">#ffffff</item>
+	</style>
+	<style name="text_smare">
+		<item name="android:textSize">12dip</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<style name="text_smare2">
+		<item name="android:textSize">12dip</item>
+		<item name="android:textColor">#ffffff</item>
+	</style>
+	<!-- Title样式 -->
+	<style name="title_name">
+		<item name="android:paddingTop">18dip</item>
+		<item name="android:paddingLeft">12dip</item>
+		<item name="android:paddingRight">12dip</item>
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<style name="title_bar">
+		<item name="android:background">@drawable/background_title_bar</item>
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:paddingRight">10dip</item>
+	</style>
+
+	<style name="teacher_info_bar">
+		<item name="android:paddingLeft">20dip</item>
+		<item name="android:paddingRight">20dip</item>
+		<item name="android:paddingTop">10dip</item>
+		<item name="android:paddingBottom">10dip</item>
+		<item name="android:gravity">center</item>
+	</style>
+
+	<style name="transDialog" parent="android:Theme.Dialog">
+		<item name="android:windowBackground">
+			@color/dialog_back 
+		</item>
+	</style>
+
+	<style name="transActivity" parent="android:Theme.Translucent.NoTitleBar">
+		<item name="android:windowBackground">
+			@color/dialog_back 
+		</item>
+	</style>
+
+	<!-- LOGIN -->
+	<style name="login_edit_layer">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingLeft">15dip</item>
+		<item name="android:paddingRight">15dip</item>
+		<item name="android:paddingTop">15dip</item>
+		<item name="android:paddingBottom">15dip</item>
+	</style>
+	<style name="login_check_layer">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingLeft">20dip</item>
+		<item name="android:paddingRight">20dip</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">5dip</item>
+	</style>
+	<!-- 	<item name="android:text">13719301778</item>  <item name="android:text">123456</item>-->
+	<style name="login_name">
+		<item name="android:hint">@string/login_name_hint</item>
+		<item name="android:maxLength">11</item>
+		<item name="android:inputType">number</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="login_password">
+		<item name="android:hint">@string/login_password_hint</item>
+		<item name="android:maxLength">16</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:inputType">textPassword</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="login_checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+		<item name="android:button">@drawable/checkbox_selector</item>
+		<item name="android:textColor">@color/black</item>
+		<item name="android:textSize">12sp</item>
+	</style>
+
+	<!-- REGISTER -->
+	<style name="register_edit_layer">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingLeft">15dip</item>
+		<item name="android:paddingRight">15dip</item>
+		<item name="android:paddingTop">15dip</item>
+		<item name="android:paddingBottom">15dip</item>
+	</style>
+	<style name="register_name">
+		<item name="android:hint">@string/register_name_hint</item>
+		<item name="android:inputType">number</item>
+		<item name="android:maxLength">11</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="register_password">
+		<item name="android:hint">@string/register_password_hint</item>
+		<item name="android:maxLength">16</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:inputType">textPassword</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="register_email">
+		<item name="android:hint">@string/register_email_hint</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:inputType">textEmailAddress</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+
+
+
+	<style name="setting_left">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#5F5E5C</item>
+		<item name="android:layout_marginLeft">10dip</item>
+		<item name="android:layout_alignParentLeft">true</item>
+	</style>
+	<style name="setting_right">
+		<item name="android:layout_marginRight">5dip</item>
+		<item name="android:src">@drawable/rigth_jt</item>
+		<item name="android:layout_alignParentRight">true</item>
+	</style>
+	<style name="setting_edit_layer">
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:paddingRight">10dip</item>
+		<item name="android:paddingTop">10dip</item>
+		<item name="android:paddingBottom">10dip</item>
+		<item name="android:layout_marginTop">20dip</item>
+	</style>
+	<!-- eduins 校区 -->
+
+	<style name="eduins_name">
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+
+	<!-- eduins info校区 -->
+	<style name="eduins_traffic">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingLeft">15dip</item>
+		<item name="android:paddingRight">15dip</item>
+		<item name="android:paddingTop">15dip</item>
+		<item name="android:paddingBottom">15dip</item>
+	</style>
+
+
+	<!-- eduins info校区 -->
+	<style name="subject_place">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+
+	<!-- 评星控件 -->
+	<style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+		<item name="android:progressDrawable">@drawable/ratingbar_drawable</item>
+		<item name="android:minHeight">19dip</item>
+		<item name="android:maxHeight">19dip</item>
+	</style>
+
+	<!-- 评分对话框 -->
+	<style name="RatingDialog" parent="@android:Theme.Dialog">
+		<item name="android:windowFrame">@null</item>
+		<item name="android:windowBackground">@drawable/filled_box</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+	</style>
+
+	<!-- 报名 -->
+	<style name="online_register_name">
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+		<item name="android:text">高升本</item>
+	</style>
+	<style name="online_register_user_name">
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="online_register_call">
+		<item name="android:maxLength">11</item>
+		<item name="android:inputType">number</item>
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+
+	<!-- exam style -->
+	<style name="exam_info">
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:paddingRight">10dip</item>
+		<item name="android:paddingTop">10dip</item>
+		<item name="android:paddingBottom">10dip</item>
+	</style>
+	<style name="exam_right">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#9C9280</item>
+		<item name="android:layout_marginLeft">10dip</item>
+		
+	</style>
+	<style name="exam_right_dui">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#9C9280</item>
+		<item name="android:layout_marginLeft">30dip</item>
+		<item name="android:layout_alignParentRight">true</item>
+	</style>
+	<style name="exam_left">
+		<item name="android:src">@drawable/exam_ti</item>
+		<item name="android:layout_marginLeft">80dip</item>
+        
+	</style>
+	<style name="exam_left_dui">
+		<item name="android:layout_marginRight">5dip</item>
+		<item name="android:src">@drawable/exam_ti_dui</item>
+		<item name="android:layout_alignParentLeft">true</item>
+
+	</style>
+
+	<style name="list_view_style">
+		<item name="android:cacheColorHint">#00000000</item>
+		<item name="android:divider">@null</item>
+	</style>
+	<!-- 图片头像 -->
+	<style name="photo_style">
+		<item name="android:layout_width">110dip</item>
+		<item name="android:layout_height"> 76dip</item>
+		<item name="android:background">@drawable/pho_bg </item>
+		<item name="android:padding">2dip </item>
+		<item name="android:src">@drawable/avatar_icon </item>
+		<item name="android:layout_marginRight">10dip </item>
+	</style>
+	<!-- 个人专区 -->
+	<style name="my_info">
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	<style name="my_style">
+		<item name="android:layout_width">90dip</item>
+		<item name="android:layout_height"> 90dip</item>
+		<item name="android:background">@drawable/pho_bg </item>
+		<item name="android:padding">6dip </item>
+		<item name="android:src">@drawable/avatar_icon </item>
+	</style>
+	<style name="my_edit_layer">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingLeft">15dip</item>
+		<item name="android:paddingRight">15dip</item>
+
+	</style>
+	<!-- key 关键字 -->
+
+	<style name="keyword">
+		<item name="android:layout_marginLeft">-30dip </item>
+	</style>
+
+	<style name="favorite_tab">
+		<item name="android:textColor">@color/black</item>
+	</style>
+	<style name="spinnerbtndropdown" parent="android:Widget.Spinner">
+		<item name="android:background">@drawable/buttondropdown</item>
+		<item name="android:clickable">true</item>
+
+	</style>
+
+   <style name="feedback_type">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:paddingTop">5dip</item>
+		<item name="android:paddingBottom">15dip</item>
+	</style>
+   <style name="feedback_c">
+		<item name="android:saveEnabled">true</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:background">@color/translucent</item>
+	</style>
+	
+<style name="UnTheme.NoTitleBar.CustomBackground" parent="@android:Theme.Black" >  
+		<item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+       <!--  <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item> -->
+         
+</style>
+</resources>

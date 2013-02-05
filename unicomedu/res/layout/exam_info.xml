@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:background="@color/white"
+	    android:orientation="vertical">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_info_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerInParent="true"
+				android:text="@string/exam_info_exam_name" android:textColor="@color/white"
+				android:textSize="24sp" />
+			<!-- <ImageButton android:id="@+id/obj_rating_btn" android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" android:layout_centerVertical="true" 
+				android:layout_alignParentRight="true" android:background="@drawable/button_background_7"/> -->
+		</RelativeLayout>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="match_parent" android:layout_height="150dip"
+			android:background="@drawable/item_bg" android:gravity="left"
+			android:orientation="vertical" android:padding="20dip">
+			<TextView android:id="@+id/obj_info_name"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_alignParentTop="true" android:text="读物名称"
+				android:textColor="@color/text_color_title" android:ellipsize="marquee"
+				android:singleLine="true" android:textSize="20sp" />
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_marginTop="5dip"
+				android:orientation="horizontal">
+				<ImageView android:id="@+id/item_avatar"
+					android:layout_width="115dip" android:layout_height="80dip"
+					android:layout_marginRight="20dip" android:background="@drawable/pho_bg"
+					  android:padding="2dip" android:src="@drawable/avatar_icon" />
+				<RelativeLayout android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+					<TextView android:id="@+id/obj_info_author"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_alignParentTop="true" 
+						android:text="作者: xiaoqiang" android:textColor="@color/text_color_field_content"
+						android:textSize="16sp" />
+					<LinearLayout android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"  
+						android:layout_alignParentLeft="true" android:gravity="center_vertical">
+						<ImageView android:id="@+id/obj_info_level_icon"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:src="@drawable/share_icon" android:layout_marginLeft="3dip"
+							android:layout_marginTop="2dip" />
+						<TextView android:id="@+id/obj_info_level"
+							android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3dip"
+							android:text=" : 300人已点播" android:textColor="@color/text_color_field_content"
+							android:textSize="16sp" />
+					</LinearLayout>
+					<Button android:id="@+id/obj_info_reading"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:background="@drawable/button_background_5" android:text="@string/exam_info_examing"
+						android:layout_alignParentBottom="true" android:textColor="@color/black"
+						android:textSize="16sp" />
+				</RelativeLayout>
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="150dip" android:orientation="vertical"
+			android:padding="10dip" android:gravity="top">
+			<TextView android:id="@+id/obj_info_introduce"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textColor="@color/text_color_field_content"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+</RelativeLayout>

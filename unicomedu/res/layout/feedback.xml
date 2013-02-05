@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        style="@style/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageButton
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/button_background_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/feedback_title"
+            android:textColor="#fff"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" >
+    
+    <LinearLayout
+        android:id="@+id/register_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dip" >
+
+        <LinearLayout
+            android:id="@+id/register_content_name_layer"
+            style="@style/feedback_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@drawable/feedback_type_left"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="2dip"
+                    android:text="@string/feedback_type"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/feedback_type_r"
+                android:gravity="center" >
+
+                <Spinner
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/drop_list"
+                    android:textColor="@color/text_color_field_content"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/register_edit_layer"
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:background="@drawable/background_top_round"
+            android:gravity="top|left" >
+
+            <EditText
+                android:id="@+id/feedback_content"
+                style="@style/feedback_c"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="top"
+                android:hint="@string/feedback_hint_text"
+                android:textColor="@color/text_color_field_content"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/register_edit_layer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dip"
+            android:layout_marginTop="-3dip"
+            android:background="@drawable/background_bottom_round" >
+
+            <EditText
+                android:id="@+id/feedback_link"
+                style="@style/feedback_c"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/feedback_hi_m"
+                android:textColor="@color/text_color_field_content"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/feedback_submit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:background="@drawable/button_background_2"
+            android:text="@string/feedback_submit" />
+    </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

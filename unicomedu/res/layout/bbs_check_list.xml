@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>	 
+	<erb.unicomedu.ui.FilterExpand
+		android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:id="@+id/checkall_filter_expand"
+	>
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:background="@drawable/list_item_bg"
+		    android:orientation="vertical" >
+		    <RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="50dp"
+			    android:background="@drawable/background_title_bar"
+			    android:orientation="vertical" >
+			
+				<Button
+			        android:id="@+id/bbs_check_back"
+			        android:layout_marginLeft="5dp"
+			        android:layout_marginTop="10dp"
+			        android:layout_centerInParent="true"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:layout_alignParentTop="true"
+			        android:textColor="@color/white"
+			        android:background="@drawable/head_left_btn" />
+				
+				<ImageView
+			        android:id="@+id/bbs_check_collection"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignTop="@+id/bbs_check_reply"
+			        android:layout_toLeftOf="@+id/bbs_check_reply"
+			        android:layout_marginRight="5dp"
+			       android:background="@drawable/button_background_7"/>
+				
+			    <Button
+			        android:id="@+id/bbs_check_reply"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerInParent="true"
+			        android:layout_marginTop="10dp"
+			        android:layout_marginRight="5dp"
+			        android:layout_alignParentRight="true"
+			        android:layout_alignParentTop="true"
+			        android:textColor="@color/white"
+			        android:background="@drawable/head_right_btn"
+			        android:text="@string/btn_right_check_all" />
+			
+			
+				<LinearLayout 
+				    android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerInParent="true"
+			        android:visibility="gone"
+			        android:orientation="horizontal">
+			
+					<TextView
+					    android:id="@+id/bbs_middle_checktitle"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_gravity="center"
+					    android:text="@string/btn_middle_title"
+					    android:textColor="@color/white"
+					    android:textSize="24sp" />
+				
+			
+				    <ImageView
+				        android:id="@+id/bbs_check_down"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:layout_marginLeft="5dp"
+				        android:src="@drawable/down" />
+			
+				</LinearLayout>
+			
+			</RelativeLayout>
+		    
+		    <TextView 
+		       android:id="@+id/bbs_check_posttitle"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="20dp"
+	            android:layout_marginTop="5dp"
+	            android:textColor="@color/text_color_info"
+	            android:textSize="20sp" />
+		  <LinearLayout 
+		      	android:orientation="horizontal" android:layout_width="fill_parent"
+		      	android:layout_height="wrap_content" >
+		      	  <TextView 
+		       android:id="@+id/bbs_check_readtime"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="20dp"
+	            android:layout_marginTop="3dp"
+	            android:layout_marginBottom="3dp"
+	            android:textColor="@color/text_color_info"
+	            android:textSize="15sp" />
+	            
+	            <TextView 
+		       android:id="@+id/bbs_check_postnum"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="20dp"
+	            android:layout_marginTop="3dp"
+	            android:layout_marginBottom="3dp"
+	            android:gravity="center"
+	            android:textColor="@color/text_color_info"
+	            android:textSize="15sp" />
+            </LinearLayout>
+		   <LinearLayout 
+		      	android:orientation="vertical" android:layout_width="fill_parent"
+		      	android:layout_height="wrap_content" android:id="@+bbs/linear_line" ></LinearLayout>
+		 
+			<!--  <erb.unicomedu.ui.PullToRefreshListView
+				android:id="@+id/bbs_check_list" android:layout_height="fill_parent"
+				android:layout_width="fill_parent"
+				style="@style/list_view_style"
+				android:divider="@drawable/list_divider_line"
+				></erb.unicomedu.ui.PullToRefreshListView> -->
+				 <include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+		</LinearLayout>
+	 </erb.unicomedu.ui.FilterExpand>
+<!-- 	<erb.unicomedu.ui.MenuControl 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+	/> -->
+</RelativeLayout>

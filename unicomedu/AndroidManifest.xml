@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="erb.unicomedu.activity" android:versionCode="1"
+	android:versionName="0.66">
+	<uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>  
+	<uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" />
+	<uses-permission android:name="android.permission.ACCESS_DRM" />
+	<uses-permission android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+	<uses-permission android:name="android.permission.INSTALL_DRM" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:name="MyApplication">
+		<activity android:name=".LoginActivity" android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".LoadActivity" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait"
+			android:label="@string/app_name"  android:launchMode="standard">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".HomeActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".RegionalActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".EActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".PublicActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		
+		<activity android:name=".PlaceInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".EduInsActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".EduInsMapActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".EduInsInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<!--  Subject android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+ -->
+		<activity android:name=".SubjectActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".SubjectInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".SubjectSearchActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".SubjectResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		
+		<activity android:name=".IntentionCourseActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		
+	    <!-- bbs -->
+	   <activity android:name=".BbsinfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".BbsActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".BbsMyThemeActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".BbsAskActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".BbsCheckAllActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".BbsReplyActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+	   <!-- teacher -->
+		<activity android:name=".TeacherActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".TeacherSearchActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".TeacherResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".TeacherInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		
+		<!-- video -->
+		<activity android:name=".VideoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".VideoInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".VideoPlayerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard">	</activity>
+		<activity android:name=".VideoSearchActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard">	</activity>
+		<activity android:name=".VideoResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard">	</activity>
+		
+		<activity android:name=".ActKeywordAnim" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard" >	</activity>
+		<activity android:name=".PushActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"></activity>
+		<activity android:name=".RegActivity" android:windowSoftInputMode="adjustPan"  android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<!-- read  -->
+		<activity android:name=".ReadActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ReadInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ReadSearchActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ReadingActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ReadResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<!-- exam -->
+		<activity android:name=".ExamActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ExamSearchActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ExamResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ExamInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ExamingActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".ExamingResultActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".WrongQuestionsActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		
+		<!-- setting -->
+		<activity android:name=".SettingActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".UserInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  ></activity>
+		<activity android:name=".HelpActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".AboutActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".FeedbackActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		
+		<!-- sign -->
+		<activity android:name=".SignActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<activity android:name=".SignRankingActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		
+		
+		<activity android:name=".OnlineRegistrationActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"   ></activity>
+	    <activity android:name=".MediaPlayActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground"   android:screenOrientation="landscape" android:label="@string/app_name" android:launchMode="standard"  ></activity>
+	    <!-- msg -->  
+		<activity android:name=".MsgActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="standard"  ></activity>
+		<activity android:name=".MsgInfoActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+	        
+	      <!-- 收藏 -->  
+		<activity android:name=".FavoriteActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground" android:label="@string/app_name" android:screenOrientation="portrait"  android:launchMode="standard"></activity>
+		<!-- push -->
+		<activity android:name="erb.unicomedu.push.NotificationDetailsActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground"  android:label="@string/msg_details" android:screenOrientation="portrait"  android:launchMode="standard">
+		</activity>
+		<activity android:name="erb.unicomedu.push.NotificationSettingsActivity" android:theme="@style/UnTheme.NoTitleBar.CustomBackground"  android:label="@string/msg_setting" android:screenOrientation="portrait"  android:launchMode="standard">
+		</activity>
+		
+		
+		<service android:enabled="true" android:name="erb.unicomedu.push.NotificationService" android:label="NotificationService">
+			<intent-filter>
+				<action android:name="erb.unicomedu.push.NotificationService" />
+			</intent-filter>
+		</service>
+		<service android:enabled="true" android:name="erb.unicomedu.service.UnicomeduService" >
+			<intent-filter>
+				<action android:name="erb.unicomedu.service.UnicomeduService" />
+			</intent-filter>
+		</service>
+		
+		
+	</application>
+  
+</manifest>

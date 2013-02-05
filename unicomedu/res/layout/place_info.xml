@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>	
+	<LinearLayout
+		android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:id="@+id/filter_expand"
+	>
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="match_parent" android:background="@drawable/list_item_bg"
+			android:clickable="true" android:orientation="vertical">
+			<RelativeLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" 
+				style="@style/title_bar" 
+				android:id="@+id/teacherinfo_tab">
+				<ImageButton 
+				    android:id="@+id/place_search_back"
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true" 
+					android:background="@drawable/button_background_back" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/place_info_top_title"
+					android:textColor="#fff" android:textSize="24sp"
+					android:layout_centerInParent="true" />
+				 
+			</RelativeLayout>
+			<RelativeLayout android:layout_width="fill_parent"
+				android:id="@+id/teacherinfo_xq" 
+				android:layout_height="wrap_content"
+				android:paddingLeft="10dip"
+				android:paddingRight="10dip"
+				android:paddingTop="20dip"
+				android:paddingBottom="20dip"
+				>
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical" android:layout_width="fill_parent" 
+					android:layout_marginLeft="10dp" 
+					android:id="@+id/subject_left_title"
+					android:layout_height="wrap_content">
+					<TextView 
+					    android:id="@+id/subject_name"
+					    android:layout_width="wrap_content"  
+						android:layout_height="wrap_content"
+						android:textColor="@color/text_color_2"
+						android:textSize="20sp"
+						android:layout_marginBottom="5dp"
+						  />
+						<ImageView android:layout_width="fill_parent"  android:background="@drawable/background_repeat"
+					android:layout_centerInParent="true" android:layout_height="wrap_content" 
+					android:layout_margin="5dip"
+					/>
+					 
+					<TextView 
+					    android:id="@+id/subject_address"
+					    android:layout_width="wrap_content"  
+						android:layout_height="wrap_content" 
+						android:textSize="14sp"
+						android:layout_marginTop="10dip"
+						android:text="" />
+				 
+				</LinearLayout>
+	 
+			</RelativeLayout>
+			 <RelativeLayout 
+			   	    android:layout_width="match_parent"
+					android:layout_height="wrap_content" 
+					android:layout_margin="20dip"
+			    >
+			        <LinearLayout 
+			            	android:id="@+id/eduins_info_button_bar"
+			 			    android:layout_width="match_parent"
+							android:layout_height="wrap_content" 
+							style="@style/eduins_traffic"
+							android:layout_marginTop="3dip"
+							android:background="@drawable/eduis_info_top_bg"
+					/>
+			        <LinearLayout android:id="@+id/edu_ll_info" 
+			                style="@style/eduins_traffic" 
+			                android:layout_below="@+id/eduins_info_button_bar"
+			                android:background="@drawable/eduis_info_bottom_bg"
+							android:layout_width="match_parent"
+							android:layout_marginBottom="4dip" 
+							android:layout_height="fill_parent">
+							<TextView android:layout_width="fill_parent"  android:id="@+id/tv_traffic"
+								android:layout_height="fill_parent"  
+								android:textColor="@color/text_color_field_content" android:textSize="15sp"/>
+				    </LinearLayout>
+					<LinearLayout android:id="@+id/edu_ll_xqjs"
+					    android:layout_below="@+id/eduins_info_button_bar"
+						android:layout_width="match_parent" android:layout_height="fill_parent" 
+						 style="@style/eduins_traffic" 
+						 android:background="@drawable/eduis_info_bottom_bg"
+						 android:layout_marginBottom="4dip"
+						 android:visibility="gone">
+						<ImageView android:layout_width="fill_parent" android:id="@+id/img_map"
+							android:layout_height="fill_parent" android:src="@drawable/map_address" />
+					</LinearLayout>
+					<Button android:id="@+id/filter_info" 
+					    		android:layout_width="wrap_content"
+								android:layout_height="wrap_content" 
+								android:background="@drawable/button_4"
+								android:textColor="@color/text_color_orange"
+								android:text="@string/ei_map_traffic"
+								android:layout_marginLeft="15dip" 
+								android:paddingLeft="4dip"
+								android:paddingRight="4dip"
+								android:textSize="16sp" />
+			        <Button android:id="@+id/filter_xqcx" 
+			            		android:layout_width="wrap_content"
+								android:layout_height="wrap_content" 
+								android:background="@drawable/button_4_uncheck"
+								android:text="@string/ei_map_position" 
+								android:textColor="@color/black"
+								android:paddingLeft="4dip"
+								android:paddingRight="4dip"
+								android:layout_toRightOf="@+id/filter_info"
+								android:textSize="16sp" />
+			    </RelativeLayout>	
+
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout> 

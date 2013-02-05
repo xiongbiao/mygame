@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:orientation="vertical"
+		android:id="@+id/filter_expand">
+		<LinearLayout android:layout_width="match_parent"
+			android:layout_height="match_parent" android:background="@drawable/list_item_bg"
+			android:clickable="true" android:orientation="vertical">
+			<RelativeLayout android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="@style/title_bar"
+				android:id="@+id/teacherinfo_tab">
+				<ImageButton android:id="@+id/teacher_search_back"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/teacherinfo_top"
+					android:textColor="#fff" android:textSize="24sp"
+					android:layout_centerInParent="true" />
+				<ImageButton android:id="@+id/teacher_favorite_btn"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_alignParentRight="true" android:background="@drawable/button_background_7" />
+			</RelativeLayout>
+			<RelativeLayout android:layout_width="fill_parent"
+				android:id="@+id/teacherinfo_xq" android:layout_height="wrap_content"
+				android:paddingLeft="10dip" android:paddingRight="10dip"
+				android:paddingTop="20dip" android:paddingBottom="30dip"
+				android:background="#FEFBF4">
+				<ImageView android:layout_width="130dp"
+					android:layout_height="160dp" android:id="@+id/teacherinfo_picture"
+					android:background="@drawable/pho_bg" android:padding="5dip" />
+				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical" android:layout_width="wrap_content"
+					android:layout_toRightOf="@id/teacherinfo_picture"
+					android:layout_marginLeft="10dp" android:id="@+id/teacherinfo_left_title"
+					android:layout_height="wrap_content">
+					<TextView android:id="@+id/teacherinfo_name"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textColor="@color/text_color_title" android:textSize="18sp"
+						android:layout_marginBottom="10dp" android:text="@string/teacherinfo_name" />
+					<TextView android:id="@+id/teacherinfo_en_name"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textSize="14sp" android:textColor="@color/text_color_field_content"
+						android:text="@string/teacherinfo_en_name" />
+					<TextView android:id="@+id/teacherinfo_sex"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textSize="14sp" android:textColor="@color/text_color_field_content"
+						android:text="@string/teacherinfo_sex" />
+					<TextView android:id="@+id/teacherinfo_jg"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textSize="14sp" android:textColor="@color/text_color_field_content"
+						android:text="@string/teacherinfo_jg" />
+					<TextView android:id="@+id/teacherinfo_titler"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textSize="14sp" android:textColor="@color/text_color_field_content"
+						android:text="@string/teacherinfo_titler" />
+					<TextView android:id="@+id/teacherinfo_experience"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:textSize="14sp" android:textColor="@color/text_color_field_content"
+						android:layout_marginBottom="6dip" android:text="@string/teacherinfo_experience" />
+					<LinearLayout android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:gravity="center_vertical">
+						<Button android:id="@+id/teacherinfo_pf"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="@string/teacherinfo_rating" android:background="@drawable/button_5"
+							android:gravity="center" android:layout_marginRight="5dip" />
+						<RatingBar style="@style/roomRatingBar"
+							android:layout_width="0dip" android:layout_height="wrap_content"
+							android:layout_weight="1" android:numStars="4"
+							android:id="@+id/teacherinfo_rating" />
+					</LinearLayout>
+				</LinearLayout>
+			</RelativeLayout>
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="0dip" android:layout_weight="1"
+				android:orientation="vertical" android:background="#fff"
+				android:gravity="top">
+				<RelativeLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<LinearLayout android:id="@+id/teacherinfo_info_button_bar"
+						android:layout_width="match_parent" android:layout_height="wrap_content"
+						style="@style/eduins_traffic" android:layout_marginTop="2dip"
+						android:background="@drawable/video_filter_bar" />
+					<LinearLayout android:id="@+id/teacherinfo_ll_info"
+						style="@style/eduins_traffic" android:layout_below="@+id/teacherinfo_info_button_bar"
+						android:layout_width="match_parent" android:gravity="top"
+						android:layout_height="fill_parent">
+
+						<!-- <TextView android:layout_width="80dp" android:layout_height="30dp" 
+							android:text="@string/teacherinfo_title" /> -->
+						<TextView android:layout_width="fill_parent"
+							android:layout_marginTop="5dip" android:textColor="@color/text_color_field_content"
+							android:textSize="16sp" android:id="@+id/teacherinfo_info"
+							android:layout_height="wrap_content" android:text="@string/teacherinfo_info" />
+					</LinearLayout>
+					<LinearLayout android:id="@+id/teacherinfo_ll_xqjs"
+						android:layout_below="@+id/teacherinfo_info_button_bar"
+						android:layout_width="fill_parent" android:layout_height="fill_parent"
+						android:visibility="gone">
+						<include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+					</LinearLayout>
+					<Button android:id="@+id/filter_info" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:background="@drawable/button_4"
+						android:textColor="@color/text_color_orange" android:text="@string/teacherinfo_introduce"
+						android:layout_marginLeft="15dip" android:paddingLeft="4dip"
+						android:paddingRight="4dip" android:textSize="16sp" />
+					<Button android:id="@+id/filter_xqcx" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:background="@drawable/button_4_uncheck"
+						android:text="@string/teacherinfo_pro" android:textColor="@color/black"
+						android:paddingLeft="4dip" android:paddingRight="4dip"
+						android:layout_toRightOf="@+id/filter_info" android:textSize="16sp" />
+				</RelativeLayout>
+			</LinearLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout> 

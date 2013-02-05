@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:orientation="vertical" 
+    android:background="@drawable/msg_list_select_bg"
+    android:id="@+id/layout" >
+
+    <TextView
+        android:id="@+id/msg_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="5dp"
+        android:text="消息标题"
+        android:textSize="20sp" 
+        android:textColor="@color/text_color_orange"/>
+    
+    <RelativeLayout android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginBottom="5dip"
+				    android:layout_marginLeft="5dp"
+				    android:layout_marginRight="5dp"
+				    android:orientation="horizontal" >
+
+  <TextView
+      android:id="@+id/msg_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
+      android:text="2012-10-20"
+      android:textColor="@color/text_color_num"
+      android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/msg_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/msg_time"
+            android:layout_toRightOf="@id/item_avatar"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="国庆雅思加速班"
+            android:textSize="16sp" 
+            android:textColor="@color/text_color_field_content"
+            android:layout_marginLeft="13dp"/>
+
+	</RelativeLayout>
+
+</LinearLayout>

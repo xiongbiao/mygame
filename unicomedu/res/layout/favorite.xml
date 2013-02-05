@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:gravity="center" android:background="#fff" android:orientation="vertical">
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" style="@style/title_bar"
+		android:id="@+id/title_bar">
+		
+            <ImageButton
+                android:id="@+id/obj_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/button_background_back" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/favorite_top_name"
+			android:textColor="#fff" android:textSize="24sp"
+			android:layout_centerInParent="true" />
+		 
+	</RelativeLayout>
+
+
+
+	<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:gravity="center" android:layout_height="wrap_content"
+		android:background="@drawable/filter_bar">
+		<TextView android:id="@+id/intention_course_select_empty"
+			android:text="@string/favorite_teacher" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textColor="@color/black"
+			android:background="@drawable/button_background_3"
+			android:layout_alignParentLeft="true" />
+
+		<TextView android:id="@+id/intention_course_select_empty"
+			android:text="@string/favorite_subjert" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textColor="@color/black"
+			android:layout_gravity="center" android:layout_marginLeft="25dip"
+			android:layout_centerVertical="true" />
+		<TextView android:id="@+id/favorite_read" android:text="@string/favorite_read"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_centerInParent="true" />
+		<TextView android:id="@+id/favorite_bbs" android:text="@string/favorite_bbs"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textColor="@color/black" android:layout_marginRight="25dip"
+			android:layout_centerInParent="true" android:layout_alignParentRight="true" />
+		<TextView android:id="@+id/favorite_video" android:text="@string/favorite_video"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textColor="@color/black"  android:layout_toRightOf="@id/favorite_read"
+			android:layout_toLeftOf="@id/favorite_bbs"
+			android:layout_centerInParent="true" />
+	</RelativeLayout> -->
+	
+	<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:gravity="center" android:layout_height="wrap_content"
+		android:background="@drawable/filter_bar"> -->
+		 <GridView android:id="@+id/GridView_toolbar" android:background="@drawable/filter_bar"
+		      android:layout_height="wrap_content" android:layout_width="fill_parent"
+		 ></GridView>  
+	<!-- </LinearLayout>  -->
+<include android:id="@+id/inc_data_loading" layout="@layout/list_view_layout" />
+</LinearLayout>

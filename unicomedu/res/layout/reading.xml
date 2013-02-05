@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:background="@color/white"
+		android:clickable="true" android:orientation="vertical">
+		<RelativeLayout android:id="@+id/obj_info_tab" style="@style/title_bar"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<ImageButton android:id="@+id/obj_top_back"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerVertical="true" android:background="@drawable/button_background_back" />
+			<TextView android:id="@+id/obj_top_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_centerInParent="true" android:text="@string/read_info_read_name"
+				android:textColor="@color/white" android:textSize="24sp" />
+		</RelativeLayout>
+		<FrameLayout android:layout_width="match_parent"
+		    android:background="#fff"
+			android:layout_height="match_parent">
+			<WebView android:id="@+id/reading_web" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:visibility="gone"/>
+			<erb.unicomedu.ui.LoadingView android:id="@+id/data_loading"
+				android:layout_height="fill_parent" android:layout_width="fill_parent">
+			</erb.unicomedu.ui.LoadingView>
+		</FrameLayout>
+	</LinearLayout>
+
+</RelativeLayout>
