@@ -19,8 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Í·ÌõĞÂÎÅActivity
- * @Description: Í·ÌõĞÂÎÅActivity
+ * å¤´æ¡æ–°é—»Activity
+ * @Description: å¤´æ¡æ–°é—»Activity
 
  * @File: TopicNews.java
 
@@ -28,49 +28,49 @@ import android.widget.TextView;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 ÉÏÎç08:24:36
+ * @Date 2012-6-18 ä¸Šåˆ08:24:36
 
  * @Version V1.0
  */
 public class TopicNews extends Activity{
-	// »¬¶¯Í¼Æ¬µÄ¼¯ºÏ
+	// æ»‘åŠ¨å›¾ç‰‡çš„é›†åˆ
 	private ArrayList<View> mImagePageViewList = null;
 	private ViewGroup mMainView = null;
 	private ViewPager mViewPager = null;
-	// µ±Ç°ViewPagerË÷Òı
+	// å½“å‰ViewPagerç´¢å¼•
 //	private int pageIndex = 0; 
 	
-	// °üº¬Ô²µãÍ¼Æ¬µÄView
+	// åŒ…å«åœ†ç‚¹å›¾ç‰‡çš„View
 	private ViewGroup mImageCircleView = null;
 	private ImageView[] mImageCircleViews = null; 
 	
-	// »¬¶¯±êÌâ
+	// æ»‘åŠ¨æ ‡é¢˜
 	private TextView mSlideTitle = null;
 	
-	// ²¼¾ÖÉèÖÃÀà
+	// å¸ƒå±€è®¾ç½®ç±»
 	private SlideImageLayout mSlideLayout = null;
-	// Êı¾İ½âÎöÀà
+	// æ•°æ®è§£æç±»
 	private NewsXmlParser mParser = null; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(android.R.style.Theme_Translucent_NoTitleBar);		
-		// ³õÊ¼»¯
+		// åˆå§‹åŒ–
 		initeViews();
 	}
 	
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 */
 	private void initeViews(){
-		// »¬¶¯Í¼Æ¬ÇøÓò
+		// æ»‘åŠ¨å›¾ç‰‡åŒºåŸŸ
 		mImagePageViewList = new ArrayList<View>();
 		LayoutInflater inflater = getLayoutInflater();  
 		mMainView = (ViewGroup)inflater.inflate(R.layout.page_topic_news, null);
 		mViewPager = (ViewPager) mMainView.findViewById(R.id.image_slide_page);  
 		
-		// Ô²µãÍ¼Æ¬ÇøÓò
+		// åœ†ç‚¹å›¾ç‰‡åŒºåŸŸ
 		mParser = new NewsXmlParser();
 		int length = mParser.getSlideImages().length;
 		mImageCircleViews = new ImageView[length];
@@ -84,18 +84,18 @@ public class TopicNews extends Activity{
 			mImageCircleView.addView(mSlideLayout.getLinearLayout(mImageCircleViews[i], 10, 10));
 		}
 		
-		// ÉèÖÃÄ¬ÈÏµÄ»¬¶¯±êÌâ
+		// è®¾ç½®é»˜è®¤çš„æ»‘åŠ¨æ ‡é¢˜
 		mSlideTitle = (TextView) mMainView.findViewById(R.id.tvSlideTitle);
 		mSlideTitle.setText(mParser.getSlideTitles()[0]);
 		
 		setContentView(mMainView);
 		
-		// ÉèÖÃViewPager
+		// è®¾ç½®ViewPager
         mViewPager.setAdapter(new SlideImageAdapter());  
         mViewPager.setOnPageChangeListener(new ImagePageChangeListener());
 	}
 	
-	// »¬¶¯Í¼Æ¬Êı¾İÊÊÅäÆ÷
+	// æ»‘åŠ¨å›¾ç‰‡æ•°æ®é€‚é…å™¨
     private class SlideImageAdapter extends PagerAdapter {  
         @Override  
         public int getCount() { 
@@ -143,7 +143,7 @@ public class TopicNews extends Activity{
         }  
     }
     
-    // »¬¶¯Ò³Ãæ¸ü¸ÄÊÂ¼ş¼àÌıÆ÷
+    // æ»‘åŠ¨é¡µé¢æ›´æ”¹äº‹ä»¶ç›‘å¬å™¨
     private class ImagePageChangeListener implements OnPageChangeListener {
         @Override  
         public void onPageScrollStateChanged(int arg0) {  

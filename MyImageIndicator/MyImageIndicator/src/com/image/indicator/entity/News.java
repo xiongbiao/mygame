@@ -1,8 +1,8 @@
 package com.image.indicator.entity;
 
 /**
- * ĞÂÎÅÊµÌåÀà
- * @Description: ĞÂÎÅÊµÌåÀà
+ * æ–°é—»å®ä½“ç±»
+ * @Description: æ–°é—»å®ä½“ç±»
 
  * @File: News.java
 
@@ -10,26 +10,26 @@ package com.image.indicator.entity;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 ÏÂÎç02:25:02
+ * @Date 2012-6-18 ä¸‹åˆ02:25:02
 
  * @Version V1.0
  */
 public class News {
 	// ID
 	private int id;
-	// ¼òÒª±êÌâ
+	// ç®€è¦æ ‡é¢˜
 	private String simpleTitle;
-	// ÍêÕû±êÌâ
+	// å®Œæ•´æ ‡é¢˜
 	private String fullTitle;
-	// Á´½ÓµØÖ·
+	// é“¾æ¥åœ°å€
 	private String newsUrl;
-	// ĞÂÎÅÄÚÈİ
+	// æ–°é—»å†…å®¹
 	private String newsContent;
-	// ²é¿´´ÎÊı
+	// æŸ¥çœ‹æ¬¡æ•°
 	private int viewCount;
-	// ÆÀÂÛ´ÎÊı
+	// è¯„è®ºæ¬¡æ•°
 	private int commentCount;
-	// ÊÇ·ñ±»¶Á¹ı
+	// æ˜¯å¦è¢«è¯»è¿‡
 	private boolean isReaded;
 	
 	public int getId() {

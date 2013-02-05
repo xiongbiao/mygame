@@ -22,12 +22,12 @@ import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
 
 /**
- * AndroidÊµÏÖ¾Ö²¿Í¼Æ¬»¬¶¯Ö¸ÒıĞ§¹û
- * @Description: ÊµÏÖÒÔÏÂ¹¦ÄÜ£º
- * 1¡¢¶¥²¿µ¥ÕÅÍ¼Æ¬×óÓÒÍÏÀ­»¬¶¯£»
- * 2¡¢´øÖ¸Òı£»
- * 3¡¢½ö»¬¶¯¶¥²¿µ¥ÕÅÍ¼Æ¬£¬²»»¬¶¯Ò³Ãæ£¬ÏÂÃæµÄÍ¼ÎÄÄÚÈİ²»¶¯£» 
- * 4¡¢ÀàËÆÓÚĞÂÎÅ¿Í»§¶ËµÄ¹¦ÄÜ
+ * Androidå®ç°å±€éƒ¨å›¾ç‰‡æ»‘åŠ¨æŒ‡å¼•æ•ˆæœ
+ * @Description: å®ç°ä»¥ä¸‹åŠŸèƒ½ï¼š
+ * 1ã€é¡¶éƒ¨å•å¼ å›¾ç‰‡å·¦å³æ‹–æ‹‰æ»‘åŠ¨ï¼›
+ * 2ã€å¸¦æŒ‡å¼•ï¼›
+ * 3ã€ä»…æ»‘åŠ¨é¡¶éƒ¨å•å¼ å›¾ç‰‡ï¼Œä¸æ»‘åŠ¨é¡µé¢ï¼Œä¸‹é¢çš„å›¾æ–‡å†…å®¹ä¸åŠ¨ï¼› 
+ * 4ã€ç±»ä¼¼äºæ–°é—»å®¢æˆ·ç«¯çš„åŠŸèƒ½
 
  * @File: MainActivity.java
 
@@ -36,22 +36,21 @@ import android.widget.RelativeLayout.LayoutParams;
  * @Author Hanyonglu  
  * @author lilu Modified the code at 2012-11-7
 
- * @Date 2012-6-17 ÏÂÎç11:28:43
+ * @Date 2012-6-17 ä¸‹åˆ11:28:43
 
  * @Version V1.0
  */
-@SuppressWarnings("deprecation")
 public class MainActivity extends ActivityGroup implements OnClickListener, OnCheckedChangeListener{
-	// Ñ¡ÖĞµÄĞÂÎÅÌõÄ¿
+	// é€‰ä¸­çš„æ–°é—»æ¡ç›®
 	private TextView mSelectedItem = null;
-	// Í·²¿ĞÂÎÅÌõÄ¿µÄLayout
+	// å¤´éƒ¨æ–°é—»æ¡ç›®çš„Layout
 	private RelativeLayout mHeader = null;
-	// ÖĞ¼äĞÂÎÅÖ÷ÌåµÄLayout
+	// ä¸­é—´æ–°é—»ä¸»ä½“çš„Layout
 	private RelativeLayout mNewsMainLayout = null;
 	private LayoutParams params = null;
-	//¶¥²¿ÌáÊ¾
+	//é¡¶éƒ¨æç¤º
 	private TextView mNetEaseTop = null;
-	// ĞÂÎÅ·ÖÀà
+	// æ–°é—»åˆ†ç±»
 	private TextView mNewsItem = null;
 	private TextView mInfoItem = null;
 	private TextView mBlogItem = null;
@@ -59,17 +58,17 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 	private TextView mDomainItem = null;
 	private TextView mMoreItem = null;
 	
-	// ĞÂÎÅ·ÖÀàÖĞÃ¿Ìõ·ÖÀàµÄ¿í¶È
+	// æ–°é—»åˆ†ç±»ä¸­æ¯æ¡åˆ†ç±»çš„å®½åº¦
 	private int mItemWidth = 0;
-	// ÌõÄ¿±³¾°ÒÆ¶¯¿ªÊ¼Î»ÖÃ
+	// æ¡ç›®èƒŒæ™¯ç§»åŠ¨å¼€å§‹ä½ç½®
 	private int startX = 0;
 	private Intent mIntent = null;
-	// ÉèÖÃĞÂÎÅÖ÷Ìâ
+	// è®¾ç½®æ–°é—»ä¸»é¢˜
 	private View mNewsMain = null;
 	private RadioGroup mRadioGroup;
-	//µ×²¿Ñ¡ÖĞ±êÖ¾Î»µÄImageView
+	//åº•éƒ¨é€‰ä¸­æ ‡å¿—ä½çš„ImageView
 	private ImageView mImageView;
-	//µ×²¿Layout
+	//åº•éƒ¨Layout
 	private RelativeLayout mButtomLayout;
 	int startLeft;
 	
@@ -77,12 +76,12 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);      
-        // ³õÊ¼»¯¿Ø¼ş
+        // åˆå§‹åŒ–æ§ä»¶
         initeViews();
     }
     
     /**
-     * ³õÊ¼»¯¿Ø¼ş
+     * åˆå§‹åŒ–æ§ä»¶
      */
     private void initeViews(){
     	mNewsItem = (TextView) findViewById(R.id.tv_title_news);
@@ -103,7 +102,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
     	mDomainItem.setOnClickListener(this);
     	mMoreItem.setOnClickListener(this);
 
-    	// ÉèÖÃÑ¡ÖĞÌõÄ¿ÊôĞÔ
+    	// è®¾ç½®é€‰ä¸­æ¡ç›®å±æ€§
     	mSelectedItem = new TextView(this);
     	mSelectedItem.setText(R.string.title_news_category_tops);
     	mSelectedItem.setTextColor(Color.WHITE);
@@ -120,7 +119,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
     	
     	mHeader.addView(mSelectedItem, param);
     	
-    	// ÉèÖÃÍ·ÌõĞÂÎÅÖ÷Ìå
+    	// è®¾ç½®å¤´æ¡æ–°é—»ä¸»ä½“
     	mIntent = new Intent(MainActivity.this, TopicNews.class);
     	mNewsMain = getLocalActivityManager().startActivity(
     			"TopicNews", mIntent).getDecorView();
@@ -129,7 +128,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
     	mNewsMainLayout = (RelativeLayout) findViewById(R.id.layout_news_main);
     	mNewsMainLayout.addView(mNewsMain, params);
     	
-    	//ÉèÖÃµ×²¿Ñ¡ÖĞÏî
+    	//è®¾ç½®åº•éƒ¨é€‰ä¸­é¡¹
     	
     	mImageView = new ImageView(this);
     	mImageView.setImageResource(R.drawable.tab_front_bg);
@@ -137,7 +136,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
     }
     
     /**
-     * »ñÈ¡ÆÁÄ»µÄ¿í¶È
+     * è·å–å±å¹•çš„å®½åº¦
      * @return
      */
     private int getScreenWidth(){
@@ -150,23 +149,23 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 		return screenWidth;
     }
     
-    // ĞÂÎÅ·ÖÀàÊÂ¼ş¼àÌı
+    // æ–°é—»åˆ†ç±»äº‹ä»¶ç›‘å¬
 	@Override
 	public void onClick(View v) {
 		mItemWidth = findViewById(R.id.layout).getWidth();
 		
 		switch (v.getId()) {
 		case R.id.tv_title_news:
-			//¶¯»­»¬¶¯
+			//åŠ¨ç”»æ»‘åŠ¨
 			ImageAnimation.SetImageSlide(mSelectedItem, startX, 0, 0, 0);
-			//ÉèÖÃ»¬¶¯ºó¶¯»­¿ªÊ¼Î»ÖÃ
+			//è®¾ç½®æ»‘åŠ¨ååŠ¨ç”»å¼€å§‹ä½ç½®
 			startX = 0;
-			//ÉèÖÃÑ¡ÖĞÏîÏÔÊ¾ÎÄ×Ö£¬Ò²¾ÍÊÇ¸ßÁÁ²¿·ÖÎÄ×Ö
+			//è®¾ç½®é€‰ä¸­é¡¹æ˜¾ç¤ºæ–‡å­—ï¼Œä¹Ÿå°±æ˜¯é«˜äº®éƒ¨åˆ†æ–‡å­—
 			mSelectedItem.setText(R.string.title_news_category_tops);
-			//ÉèÖÃ×óÉÏ½ÇÌáÊ¾ÎÄ×Ö
+			//è®¾ç½®å·¦ä¸Šè§’æç¤ºæ–‡å­—
 			mNetEaseTop.setText(R.string.title_news_category_tops);
 			
-			// ÏÔÊ¾Í·ÌõĞÅÏ¢
+			// æ˜¾ç¤ºå¤´æ¡ä¿¡æ¯
 			mIntent.setClass(MainActivity.this, TopicNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"TopicNews", mIntent).getDecorView();
@@ -177,7 +176,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 			mSelectedItem.setText(R.string.title_news_category_info);
 			mNetEaseTop.setText(R.string.title_news_category_info);
 			
-			// ÏÔÊ¾×ÊÑ¶ĞÅÏ¢
+			// æ˜¾ç¤ºèµ„è®¯ä¿¡æ¯
 			mIntent.setClass(MainActivity.this, InfoNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"InfoNews", mIntent).getDecorView();
@@ -188,7 +187,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 			mSelectedItem.setText(R.string.title_news_category_blog);
 			mNetEaseTop.setText(R.string.title_news_category_blog);
 			
-			// ÏÔÊ¾²©¿ÍĞÅÏ¢
+			// æ˜¾ç¤ºåšå®¢ä¿¡æ¯
 			mIntent.setClass(MainActivity.this, BlogNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"BlogNews", mIntent).getDecorView();
@@ -199,7 +198,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 			mSelectedItem.setText(R.string.title_news_category_magazine);
 			mNetEaseTop.setText(R.string.title_news_category_magazine);
 			
-			// ÏÔÊ¾ÔÓÖ¾ĞÅÏ¢
+			// æ˜¾ç¤ºæ‚å¿—ä¿¡æ¯
 			mIntent.setClass(MainActivity.this, MagazineNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"MagazineNews", mIntent).getDecorView();
@@ -209,7 +208,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 			startX = mItemWidth * 4;
 			mSelectedItem.setText(R.string.title_news_category_domain);
 			mNetEaseTop.setText(R.string.title_news_category_domain);
-			// ÏÔÊ¾Òµ½çĞÅÏ¢
+			// æ˜¾ç¤ºä¸šç•Œä¿¡æ¯
 			mIntent.setClass(MainActivity.this, DomainNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"DomainNews", mIntent).getDecorView();
@@ -220,7 +219,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 			mSelectedItem.setText(R.string.title_news_category_more);
 			mNetEaseTop.setText(R.string.title_news_category_more);
 			
-			// ÏÔÊ¾¸ü¶àĞÅÏ¢
+			// æ˜¾ç¤ºæ›´å¤šä¿¡æ¯
 			mIntent.setClass(MainActivity.this, MoreNews.class);
 			mNewsMain = getLocalActivityManager().startActivity(
 	    			"MoreNews", mIntent).getDecorView();
@@ -228,7 +227,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener, OnCh
 		default:
 			break;
 		}		
-		// ¸ü»»LayoutÖĞµÄĞÂÎÅÖ÷Ìå
+		// æ›´æ¢Layoutä¸­çš„æ–°é—»ä¸»ä½“
 		mNewsMainLayout.removeAllViews();
 		mNewsMainLayout.addView(mNewsMain, params);
 	}

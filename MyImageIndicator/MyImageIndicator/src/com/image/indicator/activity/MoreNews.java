@@ -6,8 +6,8 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * 更多新闻Activity
- * @Description: 更多新闻Activity
+ * 鏇村鏂伴椈Activity
+ * @Description: 鏇村鏂伴椈Activity
 
  * @File: MoreNews.java
 
@@ -15,7 +15,7 @@ import android.os.Bundle;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 上午08:27:03
+ * @Date 2012-6-18 涓婂崍08:27:03
 
  * @Version V1.0
  */

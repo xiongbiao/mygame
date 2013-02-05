@@ -13,8 +13,8 @@ import com.image.indicator.R;
 import com.image.indicator.utility.FileAccess;
 
 /**
- * ½âÎöĞÂÎÅÊı¾İÁĞ±í
- * @Description: ½âÎöĞÂÎÅÊı¾İÁĞ±í£¬ÕâÀïÖ»ÊÇ¸öÊ¾Àı£¬¾ßÌåµØ²»ÔÙÊµÏÖ¡£
+ * è§£ææ–°é—»æ•°æ®åˆ—è¡¨
+ * @Description: è§£ææ–°é—»æ•°æ®åˆ—è¡¨ï¼Œè¿™é‡Œåªæ˜¯ä¸ªç¤ºä¾‹ï¼Œå…·ä½“åœ°ä¸å†å®ç°ã€‚
 
  * @File: NewsXmlParser.java
 
@@ -22,15 +22,15 @@ import com.image.indicator.utility.FileAccess;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 ÏÂÎç02:31:26
+ * @Date 2012-6-18 ä¸‹åˆ02:31:26
 
  * @Version V1.0
  */
 public class NewsXmlParser {
-	// ĞÂÎÅÁĞ±í
+	// æ–°é—»åˆ—è¡¨
 //	private List<HashMap<String, News>> newsList = null;
 	
-	// »¬¶¯Í¼Æ¬µÄ¼¯ºÏ£¬ÕâÀïÉèÖÃ³ÉÁË¹Ì¶¨¼ÓÔØ£¬µ±È»Ò²¿É¶¯Ì¬¼ÓÔØ¡£
+	// æ»‘åŠ¨å›¾ç‰‡çš„é›†åˆï¼Œè¿™é‡Œè®¾ç½®æˆäº†å›ºå®šåŠ è½½ï¼Œå½“ç„¶ä¹Ÿå¯åŠ¨æ€åŠ è½½ã€‚
 	private int[] slideImages = {
 			R.drawable.image01,
 			R.drawable.image02,
@@ -38,7 +38,7 @@ public class NewsXmlParser {
 			R.drawable.image04,
 			R.drawable.image05};
 	
-	// »¬¶¯±êÌâµÄ¼¯ºÏ
+	// æ»‘åŠ¨æ ‡é¢˜çš„é›†åˆ
 	private int[] slideTitles = {
 			R.string.title1,
 			R.string.title2,
@@ -47,7 +47,7 @@ public class NewsXmlParser {
 			R.string.title5,
 	};
 	
-	// »¬¶¯Á´½ÓµÄ¼¯ºÏ
+	// æ»‘åŠ¨é“¾æ¥çš„é›†åˆ
 	private String[] slideUrls = {
 			"http://mobile.csdn.net/a/20120616/2806676.html",
 			"http://cloud.csdn.net/a/20120614/2806646.html",
@@ -69,7 +69,7 @@ public class NewsXmlParser {
 	}
 	
 	/**
-	 * »ñÈ¡XmlPullParser¶ÔÏó
+	 * è·å–XmlPullParserå¯¹è±¡
 	 * @param result
 	 * @return
 	 */
@@ -92,33 +92,33 @@ public class NewsXmlParser {
 		
 		try {
 			XmlPullParser parser = getXmlPullParser(result);
-	        int event = parser.getEventType();//²úÉúµÚÒ»¸öÊÂ¼ş
+	        int event = parser.getEventType();//äº§ç”Ÿç¬¬ä¸€ä¸ªäº‹ä»¶
 	        
 	        while(event != XmlPullParser.END_DOCUMENT){
 	        	switch(event){
 	        	case XmlPullParser.START_DOCUMENT:
 	        		break;
-	        	case XmlPullParser.START_TAG://ÅĞ¶Ïµ±Ç°ÊÂ¼şÊÇ·ñÊÇ±êÇ©ÔªËØ¿ªÊ¼ÊÂ¼ş
-	        		if("count".equals(parser.getName())){//ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇcount
+	        	case XmlPullParser.START_TAG://åˆ¤æ–­å½“å‰äº‹ä»¶æ˜¯å¦æ˜¯æ ‡ç­¾å…ƒç´ å¼€å§‹äº‹ä»¶
+	        		if("count".equals(parser.getName())){//åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯count
 	        			count = Integer.parseInt(parser.nextText());
 	                }
 	        		
 	        		break;
-	        	case XmlPullParser.END_TAG://ÅĞ¶Ïµ±Ç°ÊÂ¼şÊÇ·ñÊÇ±êÇ©ÔªËØ½áÊøÊÂ¼ş
-//	        		if("count".equals(parser.getName())){//ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇcount
+	        	case XmlPullParser.END_TAG://åˆ¤æ–­å½“å‰äº‹ä»¶æ˜¯å¦æ˜¯æ ‡ç­¾å…ƒç´ ç»“æŸäº‹ä»¶
+//	        		if("count".equals(parser.getName())){//åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯count
 //	        			count = Integer.parseInt(parser.nextText());
 //	                }
 	        		
 	        		break;
 	        	}
             
-	        	event = parser.next();//½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+	        	event = parser.next();//è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 	        }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		// ÎŞ·µ»ØÖµ£¬Ôò·µ»Ø-1
+		// æ— è¿”å›å€¼ï¼Œåˆ™è¿”å›-1
 		return count;
 	}
 }

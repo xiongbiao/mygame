@@ -6,8 +6,8 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * ÔÓÖ¾Activity
- * @Description: ÔÓÖ¾Activity
+ * æ‚å¿—Activity
+ * @Description: æ‚å¿—Activity
 
  * @File: MagazineNews.java
 
@@ -15,7 +15,7 @@ import android.os.Bundle;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 ÉÏÎç08:26:02
+ * @Date 2012-6-18 ä¸Šåˆ08:26:02
 
  * @Version V1.0
  */

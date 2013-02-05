@@ -3,8 +3,8 @@ package com.image.indicator.utility;
 import android.content.Context;
 
 /**
- * µ¥Î»Ö®¼äµÄ×ª»»Àà
- * @Description: µ¥Î»Ö®¼äµÄ×ª»»Àà
+ * å•ä½ä¹‹é—´çš„è½¬æ¢ç±»
+ * @Description: å•ä½ä¹‹é—´çš„è½¬æ¢ç±»
 
  * @File: DimensionUtility.java
 
@@ -12,13 +12,13 @@ import android.content.Context;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-18 ÉÏÎç07:59:22
+ * @Date 2012-6-18 ä¸Šåˆ07:59:22
 
  * @Version V1.0
  */
 public class DimensionUtility {
 	/**
-	 * ¸ù¾İÊÖ»úµÄ·Ö±æÂÊ´Ó dpµÄµ¥Î»×ª³ÉÎª px(ÏñËØ)
+	 * æ ¹æ®æ‰‹æœºçš„åˆ†è¾¨ç‡ä» dpçš„å•ä½è½¬æˆä¸º px(åƒç´ )
 	 * @param context
 	 * @param dpValue
 	 * @return
@@ -29,7 +29,7 @@ public class DimensionUtility {
 	}
 
 	/**
-	 * ¸ù¾İÊÖ»úµÄ·Ö±æÂÊ´Ó px(ÏñËØ)µÄµ¥Î»×ª³ÉÎª dp
+	 * æ ¹æ®æ‰‹æœºçš„åˆ†è¾¨ç‡ä» px(åƒç´ )çš„å•ä½è½¬æˆä¸º dp
 	 * @param context
 	 * @param pxValue
 	 * @return

@@ -4,8 +4,8 @@ import android.view.View;
 import android.view.animation.TranslateAnimation;
 
 /**
- * Í¼Æ¬ÒÆ¶¯µÄ¶¯»­Ğ§¹û
- * @Description: Í¼Æ¬ÒÆ¶¯µÄ¶¯»­Ğ§¹û
+ * å›¾ç‰‡ç§»åŠ¨çš„åŠ¨ç”»æ•ˆæœ
+ * @Description: å›¾ç‰‡ç§»åŠ¨çš„åŠ¨ç”»æ•ˆæœ
 
  * @File: ImageAnimatioin.java
 
@@ -13,13 +13,13 @@ import android.view.animation.TranslateAnimation;
 
  * @Author Hanyonglu
 
- * @Date 2012-6-17 ÏÂÎç11:57:29
+ * @Date 2012-6-17 ä¸‹åˆ11:57:29
 
  * @Version V1.0
  */
 public class ImageAnimation {
 	/**
-	 * ÉèÖÃÍ¼ÏñÒÆ¶¯¶¯»­Ğ§¹û
+	 * è®¾ç½®å›¾åƒç§»åŠ¨åŠ¨ç”»æ•ˆæœ
 	 * @param v
 	 * @param startX
 	 * @param toX
