@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import erb.unicomedu.adapter.TeacherAdapter;
 import erb.unicomedu.dao.TeacherDao;
 import erb.unicomedu.ui.LoadingView;

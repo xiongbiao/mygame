@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import erb.unicomedu.adapter.VideoAdapter;
 import erb.unicomedu.dao.VideoDao;
 import erb.unicomedu.ui.LoadingView;
@@ -35,7 +34,6 @@ public class VideoResultActivity extends PublicActivity implements OnClickListen
 	private ImageButton mBack;
 	private String mKeyString;
 	
-	private TextView mWhere;
 	private SubjectVo mSubjectVo;
 	private Bundle mRBundle;
 	private LoadingView lv;
@@ -51,7 +49,6 @@ public class VideoResultActivity extends PublicActivity implements OnClickListen
         if(mRBundle!=null){
         	mSubjectVo = (SubjectVo)mRBundle.getSerializable(Def.OBJ);
         } 
-		mWhere = (TextView) findViewById(R.id.result_where);
 		
 		prlistView = (PullToRefreshListView) findViewById(R.id.obj_list);
 		prlistView.setOnRefreshListener(new OnRefreshListener() {

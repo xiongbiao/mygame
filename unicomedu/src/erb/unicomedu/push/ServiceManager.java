@@ -102,8 +102,7 @@ public final class ServiceManager {
 		/**
 		 * 把参数 保存 起来
 		 */
-		sharedPrefs = context.getSharedPreferences(
-				Constants.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
+		sharedPrefs = context.getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
 		Editor editor = sharedPrefs.edit();
 		editor.putString(Constants.API_KEY, apiKey);
 		editor.putString(Constants.VERSION, version);

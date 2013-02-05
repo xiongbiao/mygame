@@ -32,6 +32,7 @@ public class NotificationIQ extends IQ {
     private String message;
 
     private String uri;
+    
     private String toClass;
 
     public String getToClass() {

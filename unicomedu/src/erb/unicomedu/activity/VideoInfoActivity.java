@@ -33,7 +33,6 @@ import erb.unicomedu.util.AsyncImageLoader;
 import erb.unicomedu.util.AsyncImageLoader.ImageCallback;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.EuException;
-import erb.unicomedu.util.ImageUtil;
 import erb.unicomedu.util.LogUtil;
 import erb.unicomedu.vo.VideoVo;
 
