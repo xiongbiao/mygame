@@ -39,11 +39,11 @@ public class InfoBox extends Dialog {
 	/**
 	 * Version info detail level.
 	 */
-	public enum Detail {
-		NONE, // Do not display.
-		SIMPLE, // Show basic name and version.
-		DEBUG; // Show debug-level detail.
-	}
+//	public enum Detail {
+//		NONE, // Do not display.
+//		SIMPLE, // Show basic name and version.
+//		DEBUG; // Show debug-level detail.
+//	}
 
 	// ******************************************************************** //
 	// Constructor.

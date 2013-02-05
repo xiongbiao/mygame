@@ -948,6 +948,7 @@ public class FirstGameActivity extends Activity {
 			viewSwitcher.setInAnimation(animSlideInRight);
 			viewSwitcher.setOutAnimation(animSlideOutRight);
 			viewSwitcher.setDisplayedChild(1);
+			Log.d(TAG, "msgid  : " + msgId);
 		}
 		// Any key dismisses it, so we need focus. TODO: doesn't work.
 		splashText.requestFocus();
