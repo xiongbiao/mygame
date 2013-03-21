@@ -142,7 +142,7 @@ public class BbsinfoActivity extends PublicActivity implements OnClickListener,O
 				erMsg = ex.getMessage();
 				data = null;
 				isFoot = false;
-				LogUtil.d("XB", ""+ex.getMessage());
+				LogUtil.d(TAG, ""+ex.getMessage());
 			}catch(Exception e) {
 				 e.printStackTrace();
 				 data = null;

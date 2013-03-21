@@ -125,6 +125,7 @@ public class Def {
 	public static String MSG_Connect_NO = "网络异常";
 	public static String MSG_YM_NO = "服务器解析失败 检查网络";
 	public static String MSG_TimeOut = "请求超时";
+	public static String MSG_IO = "读写异常";
 	
 	public static String getServiceMsg(int code){
 		String msg = "";
@@ -143,6 +144,9 @@ public class Def {
 			break;
 		case 503:
 			msg = MSG_TimeOut;
+			break;
+		case 504:
+			msg = MSG_IO;
 			break;
 		case -1:
 			msg = MSG_NO;

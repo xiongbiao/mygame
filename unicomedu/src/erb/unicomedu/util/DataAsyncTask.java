@@ -106,7 +106,7 @@ public class DataAsyncTask extends AsyncTask<String, Integer, List<Object>> {
 			case LOADING:
 //				String cofig =	data.get(3)+"";
 				if(!"".equals(tlist)){
-					editor.remove(Def.SP_NAV_NAME); 
+				   editor.remove(Def.SP_NAV_NAME); 
 				   editor.putString(Def.SP_NAV_NAME, tlist);
 				}
 				if(!"".equals(mlist)){

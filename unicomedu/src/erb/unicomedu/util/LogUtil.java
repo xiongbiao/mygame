@@ -48,6 +48,6 @@ public class LogUtil {
 	}
 
 	public static String makeLogTag(Class cls) {
-        return "unicomedu_" + cls.getSimpleName();
+        return  cls.getSimpleName();
     }
 }

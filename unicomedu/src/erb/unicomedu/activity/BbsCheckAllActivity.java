@@ -203,7 +203,7 @@ public class BbsCheckAllActivity extends PublicActivity implements OnClickListen
 				erMsg = ex.getMessage();
 				data = null;
 				isFoot = false;
-				LogUtil.d("XB", ""+ex.getMessage());
+				LogUtil.d(TAG, ""+ex.getMessage());
 			}catch(Exception e) {
 				 e.printStackTrace();
 				 data = null;

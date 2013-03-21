@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.Vector;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
@@ -24,7 +23,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import erb.unicomedu.activity.R;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.LogUtil;
 import erb.unicomedu.vo.KeyVo;
@@ -75,6 +73,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 	/** 存储显示的关键字。 */
 	private Vector<KeyVo> vecKeywords;
 	private int width, height;
+	
+	private String TAG = LogUtil.makeLogTag(KeywordsFlow.class);
 	/**
 	 * go2Show()中被赋值为true，标识开发人员触发其开始动画显示。<br/>
 	 * 本标识的作用是防止在填充keywrods未完成的过程中获取到width和height后提前启动动画。<br/>
@@ -141,7 +141,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 		if (vecKeywords.size() < MAX) {
 			for(int i =0 ;i<(keyword.size()>MAX?MAX:keyword.size());i++ ){
 				result = vecKeywords.add(keyword.get(i));
-				LogUtil.d("@@@", i+":" + keyword.get(i).getKeyValue());
+				LogUtil.d(TAG, i+":" + keyword.get(i).getKeyValue());
 			}
 		} 
 		return result;
@@ -259,8 +259,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 				/** 获取文本长度 */
 				Paint paint = txt.getPaint();
 				int strWidth = (int) Math.ceil(paint.measureText(keyword));
-				System.out.println("文本内容 ： " + keyword + ",文本长度 ：" + strWidth);
-				System.out.println("文本内容 ： " + keyword + ",x坐标 ：" + xy[IDX_X]);
+				LogUtil.d(TAG,"文本内容 ： " + keyword + ",文本长度 ：" + strWidth);
+				LogUtil.d(TAG,"文本内容 ： " + keyword + ",x坐标 ：" + xy[IDX_X]);
 				xy[IDX_TXT_LENGTH] = strWidth;
 				/** 第一次修正:修正x坐标 */
 				if (xy[IDX_X] + strWidth > width - (xItem >> 1)) {
@@ -272,7 +272,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 					xy[IDX_X] = Math.max(random.nextInt(xItem), xItem / 3);
 				}
 				xy[IDX_DIS_Y] = Math.abs(xy[IDX_Y] - yCenter);
-				LogUtil.d("*****",txt.getText() + ": x : "+xy[IDX_X]);
+				LogUtil.d(TAG,txt.getText() + ": x : "+xy[IDX_X]);
 				txt.setTag(xy);
 				if (xy[IDX_Y] > yCenter) {
 					listTxtBottom.add(txt);
@@ -297,7 +297,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 			int[] iXY = (int[]) txt.getTag(); // 第二次修正:修正y坐标
 			int yDistance = iXY[IDX_Y] - yCenter; // 对于最靠近中心点的，其值不会大于yItem<br/>
 			// 对于可以一路下降到中心点的，则该值也是其应调整的大小<br/>
-			int yMove = Math.abs(yDistance);
+//			int yMove = Math.abs(yDistance);
 //			inner: for (int k = i - 1; k >= 0; k--) {
 //				//获得使用存在的集合位置
 //				int[] kXY = (int[]) listTxt.get(k).getTag(); 
@@ -335,7 +335,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 					android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
 					android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 			layParams.gravity = Gravity.LEFT | Gravity.TOP;
-			LogUtil.d("**&&&*",txt.getText() + ": Y 坐标 : "+iXY[IDX_Y]);
+			LogUtil.d(TAG,txt.getText() + ": Y 坐标 : "+iXY[IDX_Y]);
 			layParams.leftMargin = iXY[IDX_X];
 			layParams.topMargin = iXY[IDX_Y];
 //			layParams.leftMargin = 50+i*10;
@@ -427,11 +427,11 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 	public void onGlobalLayout() {
 		int tmpW = getWidth();
 		int tmpH = getHeight();
-		LogUtil.d("^^^^^^^^^^^^~~~~~~~@@@@@", tmpH + " : " +tmpW);
+		LogUtil.d(TAG, tmpH + " : " +tmpW);
 		if (width != tmpW || height != tmpH) {
 			width = tmpW;
 			height = tmpH;
-			LogUtil.d("^^^^^^^^^^^^~~~~~~~@@@@@", height + " : " +width);
+			LogUtil.d(TAG, height + " : " +width);
 			show();
 		}
 	}

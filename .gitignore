@@ -1,4 +1,4 @@
 *.class
 *.apk
 bin/*.*
-MyImageIndicator/MyImageIndicator/bin/*.*
+MyImageIndicator/MyImageIndicator/bin

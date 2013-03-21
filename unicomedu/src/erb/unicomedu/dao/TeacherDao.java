@@ -1,12 +1,13 @@
 package erb.unicomedu.dao;
 
 import java.io.InputStream;
-import java.net.ConnectException;
 import java.net.HttpURLConnection;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -22,21 +23,71 @@ import erb.unicomedu.vo.TeacherVo;
 public class TeacherDao extends PublicDao {
 	private static String TAG = "TeacherDao";
 
+	public static List<NameValuePair> Map2NameValuePair(
+			Map<String, Object> param) {
+		List<NameValuePair> values = new ArrayList<NameValuePair>();
+		if (param != null)
+			for (Map.Entry<String, Object> entry : param.entrySet()) {
+				values.add(new BasicNameValuePair(entry.getKey(), entry
+						.getValue() + ""));
+			}
+		return values;
+	}
+
+	public static ArrayList<TeacherVo> getTeacherListV2(Map<String, Object> param) throws Exception {
+		  ArrayList<TeacherVo> resultList = null;
+		final List<NameValuePair> values = Map2NameValuePair(param);
+		try {
+			AsyncTaskCompleteListener<String> asyncTaskCompleteListener = new AsyncTaskCompleteListener<String>() {
+				public void lauchNewHttpTask() {
+					LogUtil.d(TAG, "getTeacherListV2 Values >>>>>>: " + values);
+					HttpPostDataTask httpPostTask = new HttpPostDataTask(values, HttpUrls.TeacherSERVER, this);
+					httpPostTask.execute(new Void[0]);
+				}
+
+				public void onTaskComplete(String result) {
+					LogUtil.i(TAG, "getTeacherListV2 Info Sent.");
+					LogUtil.d(TAG, "getTeacherListV2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + result);
+					try {
+						JSONObject json = new JSONObject(result);
+						String code = json.getString("code");
+						if ("200".equals(code)) {
+							JSONArray jArr = (JSONArray) json.get("Teacherlist");
+//							resultList = TeacherDao.getTList(jArr);
+
+						} else {
+							throw new EuException("code：" + code + "数据错误");
+						}
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			};
+			asyncTaskCompleteListener.lauchNewHttpTask();
+		} catch (Exception e) {
+			LogUtil.e(TAG, "getTeacherListV2 Info Sending Failed.....");
+			LogUtil.e(TAG, e.toString());
+			e.printStackTrace();
+			throw new EuException(e);
+		}
+		return resultList;
+	}
+
 	/**
 	 * 获得
 	 * 
 	 * @param param
 	 * @return
 	 */
-	public static ArrayList<TeacherVo> getTeacherList(Map<String, Object> param) throws Exception{
+	public static ArrayList<TeacherVo> getTeacherList(Map<String, Object> param)throws Exception {
 		ArrayList<TeacherVo> result = new ArrayList<TeacherVo>();
 		try {
 			DefMap(param);
-			
+
 			String from = HttpUtil.MapToParam(param);
 			LogUtil.d(TAG, "" + from);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
-					HttpUrls.TeacherSERVER, "", ""); 
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,HttpUrls.TeacherSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -46,8 +97,8 @@ public class TeacherDao extends PublicDao {
 				if ("200".equals(code)) {
 					JSONArray jArr = (JSONArray) json.get("Teacherlist");
 					result = getTList(jArr);
-				}else{
-					throw new EuException("code："+code+"数据错误");
+				} else {
+					throw new EuException("code：" + code + "数据错误");
 				}
 			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
@@ -60,13 +111,16 @@ public class TeacherDao extends PublicDao {
 		}
 		return result;
 	}
-	public static String  addFavorites(Map<String, Object> param) throws Exception{
+
+	public static String addFavorites(Map<String, Object> param)
+			throws Exception {
 		String result = "";
 		try {
 			DefMap(param);
 			String from = HttpUtil.MapToParam(param);
-			LogUtil.d(TAG, "addFavorites : "+from);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, HttpUrls.TeacherAddFavoritesSERVER, "", "");
+			LogUtil.d(TAG, "addFavorites : " + from);
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
+					HttpUrls.TeacherAddFavoritesSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -74,11 +128,11 @@ public class TeacherDao extends PublicDao {
 				String code = json.getString("code");
 				if ("200".equals(code)) {
 					result = Def.FAV_OBJ_RESULT_OK;
-				}else if("201".equals(code)){
+				} else if ("201".equals(code)) {
 					result = Def.FAV_OBJ_RESULT;
 				}
 				LogUtil.d(TAG, resultJson);
-			}else {
+			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
@@ -88,14 +142,16 @@ public class TeacherDao extends PublicDao {
 		}
 		return result;
 	}
-	
-	public static String  DeleteFavorites(Map<String, Object> param)  throws Exception {
+
+	public static String DeleteFavorites(Map<String, Object> param)
+			throws Exception {
 		String result = "";
 		try {
 			DefMap(param);
 			String from = HttpUtil.MapToParam(param);
-			LogUtil.d(TAG, "DeleteFavorites : "+from);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, HttpUrls.DeleteFavoritesSERVER, "", "");
+			LogUtil.d(TAG, "DeleteFavorites : " + from);
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
+					HttpUrls.DeleteFavoritesSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -103,75 +159,77 @@ public class TeacherDao extends PublicDao {
 				String code = json.getString("code");
 				if ("200".equals(code)) {
 					result = Def.FAV_OBJ_RESULT_OK;
-				}else if("201".equals(code)){
+				} else if ("201".equals(code)) {
 					result = Def.FAV_OBJ_RESULT;
 				}
 				LogUtil.d(TAG, resultJson);
-		}else {
+			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
-		}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new EuException(e);
-		} 
+		}
 		return result;
 	}
-	
-	
-	private static ArrayList<TeacherVo> getTList(JSONArray jArr )  throws Exception{
+
+	private static ArrayList<TeacherVo> getTList(JSONArray jArr)
+			throws Exception {
 		ArrayList<TeacherVo> result = new ArrayList<TeacherVo>();
 		try {
-		JSONObject teacherItem;
-		if (jArr.length() > 0) {
-			for (int i = 0; i < jArr.length(); i++) {
-				teacherItem = jArr.getJSONObject(i);
-				TeacherVo tv = new TeacherVo();
-				String teacherid = teacherItem.getString("teacherid");
-				String cnname = teacherItem.getString("cnname");
-				String country = teacherItem.getString("country");
-				String birthday = teacherItem.getString("birthday");
-				String enname = teacherItem.getString("enname");
-				String info = teacherItem.getString("info");
-				String sex = teacherItem.getString("sex");
-				String picture = teacherItem.getString("imgurl");
-				String zhicheng = teacherItem.getString("zhicheng");
-				String jingyan = teacherItem.getString("jingyan");
-				String techclass = teacherItem.getString("techclass");
-				String clknumber = teacherItem.getString("clknumber");
-				int star = teacherItem.getInt("star");
-				int isarchived = teacherItem.getInt("isarchived");
-				tv.setClknumber(clknumber);
-				tv.setIsarchived(isarchived);
-				tv.setStar(star);
-				tv.setTeacherid(teacherid);
-				tv.setCnname(cnname);
-				tv.setBirthday(birthday);
-				tv.setCountry(country);
-				tv.setEnname(enname);
-				tv.setInfo(info);
-				tv.setPicture(picture);
-				tv.setSex(sex);
-				tv.setJingyan(jingyan);
-				tv.setZhicheng(zhicheng);
-				tv.setTechclass(techclass);
-				result.add(tv);
+			JSONObject teacherItem;
+			if (jArr.length() > 0) {
+				for (int i = 0; i < jArr.length(); i++) {
+					teacherItem = jArr.getJSONObject(i);
+					TeacherVo tv = new TeacherVo();
+					String teacherid = teacherItem.getString("teacherid");
+					String cnname = teacherItem.getString("cnname");
+					String country = teacherItem.getString("country");
+					String birthday = teacherItem.getString("birthday");
+					String enname = teacherItem.getString("enname");
+					String info = teacherItem.getString("info");
+					String sex = teacherItem.getString("sex");
+					String picture = teacherItem.getString("imgurl");
+					String zhicheng = teacherItem.getString("zhicheng");
+					String jingyan = teacherItem.getString("jingyan");
+					String techclass = teacherItem.getString("techclass");
+					String clknumber = teacherItem.getString("clknumber");
+					int star = teacherItem.getInt("star");
+					int isarchived = teacherItem.getInt("isarchived");
+					tv.setClknumber(clknumber);
+					tv.setIsarchived(isarchived);
+					tv.setStar(star);
+					tv.setTeacherid(teacherid);
+					tv.setCnname(cnname);
+					tv.setBirthday(birthday);
+					tv.setCountry(country);
+					tv.setEnname(enname);
+					tv.setInfo(info);
+					tv.setPicture(picture);
+					tv.setSex(sex);
+					tv.setJingyan(jingyan);
+					tv.setZhicheng(zhicheng);
+					tv.setTechclass(techclass);
+					result.add(tv);
+				}
 			}
-		}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	
+
 		return result;
 	}
+
 	/**
 	 * 获得
 	 * 
 	 * @param param
 	 * @return
 	 */
-	public static ArrayList<TeacherVo> getTeacherFavoritesList(Map<String, Object> param) throws Exception{
+	public static ArrayList<TeacherVo> getTeacherFavoritesList(
+			Map<String, Object> param) throws Exception {
 		ArrayList<TeacherVo> result = new ArrayList<TeacherVo>();
 		try {
 			DefMap(param);
@@ -180,7 +238,7 @@ public class TeacherDao extends PublicDao {
 			String from = HttpUtil.MapToParam(param);
 			LogUtil.d(TAG, "" + from);
 			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
-					HttpUrls.TeacherFavoritesSERVER, "", ""); 
+					HttpUrls.TeacherFavoritesSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -191,7 +249,7 @@ public class TeacherDao extends PublicDao {
 					JSONArray jArr = (JSONArray) json.get("teacherlist");
 					result = getTList(jArr);
 				}
-			}else {
+			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
@@ -201,20 +259,22 @@ public class TeacherDao extends PublicDao {
 		}
 		return result;
 	}
-	
-	
+
 	/**
 	 * 老师 的相关课程
+	 * 
 	 * @param param
 	 * @return
 	 */
-	public static ArrayList<SubjectVo> getSubjectList(Map<String, Object> param)  throws Exception{
+	public static ArrayList<SubjectVo> getSubjectList(Map<String, Object> param)
+			throws Exception {
 		ArrayList<SubjectVo> result = new ArrayList<SubjectVo>();
 		try {
 			DefMap(param);
 			String from = HttpUtil.MapToParam(param);
 			LogUtil.d(TAG, from);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,HttpUrls.TeacherClassListSERVER, "", ""); 
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
+					HttpUrls.TeacherClassListSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -236,7 +296,8 @@ public class TeacherDao extends PublicDao {
 									.getString("fitstudent");
 							String pubtime = videoItem.getString("pubtime");
 							int clknumber = videoItem.getString("clknumber") == null
-									|| "null".equals(videoItem.getString("clknumber")) ? 0
+									|| "null".equals(videoItem
+											.getString("clknumber")) ? 0
 									: videoItem.getInt("clknumber");
 							int isarchived = videoItem.getInt("isarchived");
 							subjectVo.setIsarchived(isarchived);
@@ -246,14 +307,14 @@ public class TeacherDao extends PublicDao {
 							subjectVo.setPubtime(pubtime);
 							subjectVo.setClknumber(clknumber);
 							subjectVo.setSubjectId(subjectId);
-							
+
 							result.add(subjectVo);
 						}
 					}
 				} else {
 					LogUtil.d(TAG, "server code : " + code);
 				}
-			}else {
+			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
@@ -263,13 +324,10 @@ public class TeacherDao extends PublicDao {
 		}
 		return result;
 	}
-	
-	
-	
-	
 
 	// teacher/show
-	public static TeacherVo getTeacherById(Map<String, Object> param)  throws Exception{
+	public static TeacherVo getTeacherById(Map<String, Object> param)
+			throws Exception {
 		TeacherVo result = new TeacherVo();
 		try {
 			DefMap(param);
@@ -279,7 +337,7 @@ public class TeacherDao extends PublicDao {
 			String from = HttpUtil.MapToParam(param);
 			LogUtil.d(TAG, "" + from);
 			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
-					HttpUrls.TeacherSERVER, "", ""); 
+					HttpUrls.TeacherSERVER, "", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -312,14 +370,14 @@ public class TeacherDao extends PublicDao {
 						}
 					}
 				}
-			}else {
+			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new EuException(Def.getServiceMsg(-1));
-		}  
+		}
 		return result;
 	}
 
@@ -329,7 +387,8 @@ public class TeacherDao extends PublicDao {
 	 * @param param
 	 * @return
 	 */
-	public static ArrayList<KeyVo> getObjKey(Map<String, Object> param)throws Exception {
+	public static ArrayList<KeyVo> getObjKey(Map<String, Object> param)
+			throws Exception {
 		ArrayList<KeyVo> result = new ArrayList<KeyVo>();
 		try {
 			DefMap(param);
@@ -337,7 +396,8 @@ public class TeacherDao extends PublicDao {
 			param.put("orderby", 1);
 			param.put("size", Def.KEY_MAX_SIZE);
 			String url = "";
-			String type = param.get("urlType") != null ? param.get("urlType")+ "" : null;
+			String type = param.get("urlType") != null ? param.get("urlType")
+					+ "" : null;
 			if (type != null) {
 				int t = Integer.valueOf(type);
 				switch (t) {
@@ -346,7 +406,7 @@ public class TeacherDao extends PublicDao {
 					break;
 				case Def.Video_KEY:
 					url = HttpUrls.VideoKEYSERVER;
-   					break;
+					break;
 				case Def.Read_KEY:
 					url = HttpUrls.ReadKEYSERVER;
 					break;
@@ -367,7 +427,8 @@ public class TeacherDao extends PublicDao {
 			String from = HttpUtil.MapToParam(param);
 			LogUtil.d(TAG, "1-------" + from);
 			LogUtil.d(TAG, "1--url-----" + url);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, url, "", ""); 
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, url,
+					"", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -378,56 +439,12 @@ public class TeacherDao extends PublicDao {
 					JSONArray jArr = (JSONArray) json.get("keywordlist");
 					JSONObject keyItem;
 					if (jArr.length() > 0) {
-						for (int i = 0; i < ( jArr.length()>=Def.KEY_MAX_SIZE?Def.KEY_MAX_SIZE:jArr.length()); i++) {
+						for (int i = 0; i < (jArr.length() >= Def.KEY_MAX_SIZE ? Def.KEY_MAX_SIZE
+								: jArr.length()); i++) {
 							keyItem = jArr.getJSONObject(i);
 							KeyVo kv = new KeyVo();
 							String keyValue = keyItem.getString("keyword");
-							 int tagId = keyItem.getInt("itemid");
-								kv.setKeyId(tagId);
-							kv.setKeyValue(keyValue);
-							kv.setTagId(tagId);
-							result.add(kv);
-						}
-					}
-				}
-			} else {
-				LogUtil.d(TAG, "code : " + conn.getResponseCode());
-				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
-			}
-		}  catch (Exception e) {
-			e.printStackTrace();
-			throw new EuException(e);
-		}
-		return result;
-	}
-	
-	public static ArrayList<KeyVo> getIntentionKey(Map<String, Object> param)throws Exception  {
-		ArrayList<KeyVo> result = new ArrayList<KeyVo>();
-		try {
-			DefMap(param);
-			param.put("page", 0);
-			param.put("orderby", 1);
-			param.put("size", Def.KEY_MAX_SIZE);
-			String url  = HttpUrls.IntentionSERVER;
-			String from = HttpUtil.MapToParam(param);
-			LogUtil.d(TAG, "1-------" + from);
-			LogUtil.d(TAG, "1--url-----" + url);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, url, "", ""); 
-			if (conn.getResponseCode() == 200) {
-				InputStream in = conn.getInputStream();
-				String resultJson = HttpUtil.inputStreamString(in);
-				LogUtil.d(TAG, resultJson);
-				JSONObject json = new JSONObject(resultJson);
-				String code = json.getString("code");
-				if ("200".equals(code)) {
-					JSONArray jArr = (JSONArray) json.get("intentionlist");
-					JSONObject keyItem;
-					if (jArr.length() > 0) {
-						for (int i = 0; i <( jArr.length()>=Def.KEY_MAX_SIZE?Def.KEY_MAX_SIZE:jArr.length()); i++) {
-							keyItem = jArr.getJSONObject(i);
-							KeyVo kv = new KeyVo();
-							String keyValue = keyItem.getString("intention");
-							 int tagId = keyItem.getInt("itemid");
+							int tagId = keyItem.getInt("itemid");
 							kv.setKeyId(tagId);
 							kv.setKeyValue(keyValue);
 							kv.setTagId(tagId);
@@ -439,21 +456,27 @@ public class TeacherDao extends PublicDao {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
-		}  catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new EuException(e);
 		}
 		return result;
 	}
 
-
-    public static int   UserScore(Map<String, Object> param)throws Exception {
-    	int newstar = 0 ;
-    	try {
+	public static ArrayList<KeyVo> getIntentionKey(Map<String, Object> param)
+			throws Exception {
+		ArrayList<KeyVo> result = new ArrayList<KeyVo>();
+		try {
 			DefMap(param);
+			param.put("page", 0);
+			param.put("orderby", 1);
+			param.put("size", Def.KEY_MAX_SIZE);
+			String url = HttpUrls.IntentionSERVER;
 			String from = HttpUtil.MapToParam(param);
-			LogUtil.d(TAG, "" + from);
-			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,HttpUrls.SetstarSERVER, "", ""); 
+			LogUtil.d(TAG, "1-------" + from);
+			LogUtil.d(TAG, "1--url-----" + url);
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from, url,
+					"", "");
 			if (conn.getResponseCode() == 200) {
 				InputStream in = conn.getInputStream();
 				String resultJson = HttpUtil.inputStreamString(in);
@@ -461,16 +484,58 @@ public class TeacherDao extends PublicDao {
 				JSONObject json = new JSONObject(resultJson);
 				String code = json.getString("code");
 				if ("200".equals(code)) {
-					newstar =   json.getInt ("newstar");
+					JSONArray jArr = (JSONArray) json.get("intentionlist");
+					JSONObject keyItem;
+					if (jArr.length() > 0) {
+						for (int i = 0; i < (jArr.length() >= Def.KEY_MAX_SIZE ? Def.KEY_MAX_SIZE
+								: jArr.length()); i++) {
+							keyItem = jArr.getJSONObject(i);
+							KeyVo kv = new KeyVo();
+							String keyValue = keyItem.getString("intention");
+							int tagId = keyItem.getInt("itemid");
+							kv.setKeyId(tagId);
+							kv.setKeyValue(keyValue);
+							kv.setTagId(tagId);
+							result.add(kv);
+						}
+					}
 				}
 			} else {
 				LogUtil.d(TAG, "code : " + conn.getResponseCode());
 				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
 			}
-		}  catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new EuException(e);
 		}
-    	return newstar;
-    }  
+		return result;
+	}
+
+	public static int UserScore(Map<String, Object> param) throws Exception {
+		int newstar = 0;
+		try {
+			DefMap(param);
+			String from = HttpUtil.MapToParam(param);
+			LogUtil.d(TAG, "" + from);
+			HttpURLConnection conn = HttpUtil.getHttpURLConnection(from,
+					HttpUrls.SetstarSERVER, "", "");
+			if (conn.getResponseCode() == 200) {
+				InputStream in = conn.getInputStream();
+				String resultJson = HttpUtil.inputStreamString(in);
+				LogUtil.d(TAG, resultJson);
+				JSONObject json = new JSONObject(resultJson);
+				String code = json.getString("code");
+				if ("200".equals(code)) {
+					newstar = json.getInt("newstar");
+				}
+			} else {
+				LogUtil.d(TAG, "code : " + conn.getResponseCode());
+				throw new EuException(Def.getServiceMsg(conn.getResponseCode()));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new EuException(e);
+		}
+		return newstar;
+	}
 }

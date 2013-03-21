@@ -1,5 +1,6 @@
 package erb.unicomedu.util;
 
+import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
@@ -28,7 +29,8 @@ public class EuException extends Exception {
 			cMessage = Def.getServiceMsg(501);	
 		}else if(ex instanceof SocketTimeoutException){
 			cMessage = Def.getServiceMsg(503);	
-			//SocketTimeoutException
+		}else if(ex instanceof IOException){
+			cMessage = Def.getServiceMsg(504);	
 		}else {
 			cMessage = Def.getServiceMsg(-1);	
 		}

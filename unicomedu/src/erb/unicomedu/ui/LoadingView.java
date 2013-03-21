@@ -22,22 +22,20 @@ public class LoadingView extends RelativeLayout{
 
 	private TextView mContentView;
 	private ProgressBar mProgressBar;
+	private String TAG =LogUtil.makeLogTag(LoadingView.class);
 	
 	public LoadingView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		// TODO Auto-generated constructor stub
 		initView(context);
 	}
 
 	public LoadingView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
 		initView(context);
 	}
 
 	public LoadingView(Context context) {
 		super(context);
-		// TODO Auto-generated constructor stub
 		initView(context);
 	}
 	
@@ -101,10 +99,10 @@ public class LoadingView extends RelativeLayout{
 			}else{
 		       lv.setVisibility(View.GONE);
 		   }
-		   LogUtil.d("XB", "[   ] data size :"+ data.size());
+		   LogUtil.d(TAG, " data size :"+ data.size());
 		}
 	}
-	public void  onPost(List data,LoadingView lv,PullToRefreshListView prlistView){
+	public void onPost(List data,LoadingView lv,PullToRefreshListView prlistView){
 		if (data == null) {
 			lv.show(STATE_LOADING_UNSUCCESSFUL);
 		} else {

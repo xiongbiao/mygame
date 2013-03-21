@@ -33,8 +33,7 @@ import erb.unicomedu.vo.PushCofigVo;
  */
 public final class ServiceManager {
 
-	private static final String LOGTAG = LogUtil
-			.makeLogTag(ServiceManager.class);
+	private static final String LOGTAG = LogUtil.makeLogTag(ServiceManager.class);
 
 	private Context context;
 

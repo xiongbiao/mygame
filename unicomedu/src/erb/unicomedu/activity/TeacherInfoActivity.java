@@ -31,10 +31,10 @@ import erb.unicomedu.ui.LoadingView;
 import erb.unicomedu.ui.PullToRefreshListView;
 import erb.unicomedu.ui.PullToRefreshListView.OnRefreshListener;
 import erb.unicomedu.util.AsyncImageLoader;
+import erb.unicomedu.util.AsyncImageLoader.ImageCallback;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.EuException;
 import erb.unicomedu.util.LogUtil;
-import erb.unicomedu.util.AsyncImageLoader.ImageCallback;
 import erb.unicomedu.vo.SubjectVo;
 import erb.unicomedu.vo.TeacherVo;
 
@@ -42,7 +42,7 @@ import erb.unicomedu.vo.TeacherVo;
  * 名师详情介绍
  */
 public class TeacherInfoActivity extends PublicActivity implements OnClickListener, OnItemClickListener {
-	private String TAG = "TeacherInfoActivity";
+	private String TAG = LogUtil.makeLogTag(TeacherInfoActivity.class);
 	private TextView mTeaName;
 	private TextView mTeaEnName;
 	private TextView mTeaSex;
@@ -210,7 +210,7 @@ public class TeacherInfoActivity extends PublicActivity implements OnClickListen
 				exType = 1;	
 				erMsg = ex.getMessage();
 				data = null;
-				LogUtil.d("XB", ""+ex.getMessage());
+				LogUtil.d(TAG, ""+ex.getMessage());
 			}catch(Exception e) {
 				 e.printStackTrace();
 				 data = null;

@@ -2,13 +2,13 @@ package erb.unicomedu.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,12 +17,14 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import erb.unicomedu.adapter.TeacherAdapter;
-import erb.unicomedu.dao.TeacherDao;
 import erb.unicomedu.ui.LoadingView;
 import erb.unicomedu.ui.PullToRefreshListView;
 import erb.unicomedu.ui.PullToRefreshListView.OnRefreshListener;
+import erb.unicomedu.util.AsyncTaskListener;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.EuException;
+import erb.unicomedu.util.LogUtil;
+import erb.unicomedu.util.ObjDataTask;
 import erb.unicomedu.vo.TeacherVo;
 
 /**
@@ -30,7 +32,7 @@ import erb.unicomedu.vo.TeacherVo;
  * 
  */
 public class TeacherActivity extends PublicActivity implements OnClickListener,OnItemClickListener{
-	List<TeacherVo> data;
+	ArrayList<TeacherVo> data;
 	private PullToRefreshListView prlistView;
 	private static TeacherAdapter teacherBaseAdpter;
 	private ImageButton mTeacherSearch;
@@ -45,13 +47,14 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 	
 	private LoadingView lv;
 
+	private String TAG = LogUtil.makeLogTag(TeacherActivity.class);
 	@Override
 	protected void onResume() {
 		super.onRestart();
 		String className =  this.getClass().getName();
 		String fromClassName =  new HomeActivity().getClass().getName();
 		isModel(Def.MODEl_TE_LIST, className,fromClassName,null);
-		new GetDataTask().execute();
+//		new GetDataTask().execute();
 	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,12 +64,14 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 		prlistView.setOnRefreshListener(new OnRefreshListener() {
 			@Override
 			public void onRefresh() {
-				new GetDataTask().execute();
+//				new GetDataTask().execute();
+				asyncTaskCompleteListener.lauchNewHttpTask();
 			}
 			@Override
 			public void onLoadMore() {
 				// TODO Auto-generated method stub
-				new GetDataTask().execute();
+//				new GetDataTask().execute();
+				asyncTaskCompleteListener.lauchNewHttpTask();
 			}
 		});
 		 
@@ -86,72 +91,32 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 		home.setOnClickListener(this);
 		
 		lv = (LoadingView)findViewById(R.id.data_loading);
+		 
+		asyncTaskCompleteListener.lauchNewHttpTask();
 		
 	}
 
-	/** 
-	 * 刷新数据
-	 * @author xiong
-	 */
-	private  class GetDataTask extends AsyncTask<Void, Void, List<TeacherVo>> {
-		int exType = 0;
-		String erMsg = "";
-		boolean isFoot = true;
-		@Override
-		protected void onPreExecute() {
-			prlistView.setLoading();
-			 lv.setVisibility(View.VISIBLE);
-			lv.show(0);
-		}
-		@Override
-		protected List<TeacherVo> doInBackground(Void... params) {
-			try {
-				Map<String, Object> param = new HashMap<String, Object>();
-				if(keyword!=null)
-				{
-					param.put("keyword", keyword);
-				}
-				  param.put("orderby",mType);
-				  if(userInfo!=null){
-					  param.put("memberid",userInfo.getMemberid());
-				  }
-				 param.put("page", prlistView.getPage());
-				 param.put("size", Def.M_LIST_SIZE);
-				 ArrayList<TeacherVo> tlist =TeacherDao.getTeacherList(param);
-				 if( prlistView.getPage()>0 ){
-					 if(tlist!=null){
-						 for(TeacherVo tv :tlist ){
-							 data.add(tv);
-						 }
-						 if(tlist.size()<Def.M_LIST_SIZE){
-							 isFoot = false;
-						 }else{
-							 isFoot = true;
-						 }
-					 }
-				 }else{
-					 data = tlist;
-					 if(tlist!=null&&tlist.size()>0) 
-					     isFoot = true;
-					 else
-						 isFoot = false;
-				 }
-			}catch(EuException ex){ 
-				ex.printStackTrace();
-				exType = 1;	
-				erMsg = ex.getMessage();
-				data = null;
-				isFoot = false;
+	
+	AsyncTaskListener<ArrayList<?>> asyncTaskCompleteListener = new AsyncTaskListener<ArrayList<?>>() {
+		public void lauchNewHttpTask() {
+			Map<String, Object> param = new HashMap<String, Object>();
+			if(keyword!=null){
+				param.put("keyword", keyword);
 			}
-			catch ( Exception e) {
-				 e.printStackTrace();
-				 data = null;
-				 isFoot = false;
-			}
-			return data;
+			param.put("eventId","teacherList");
+			  param.put("orderby",mType);
+			  if(userInfo!=null){
+				  param.put("memberid",userInfo.getMemberid());
+			  }
+			 param.put("page", prlistView.getPage());
+			 param.put("size", Def.M_LIST_SIZE);
+			ObjDataTask httpPostTask = new ObjDataTask(this);
+			httpPostTask.execute(param);
 		}
-		@Override
-		protected void onPostExecute(List<TeacherVo> data) {
+
+		public void onTaskComplete(ArrayList<?> result) {
+			prlistView.setLoadingGone();
+			data = (ArrayList<TeacherVo>)result;
 			prlistView.setLoadingGone();
 			if(teacherBaseAdpter==null){
 				teacherBaseAdpter = new TeacherAdapter(TeacherActivity.this, R.layout.list_item, data);
@@ -164,12 +129,112 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 				teacherBaseAdpter.setData(data);
 			}
 			prlistView.onRefreshComplete();
-            lv.onPost(data, lv, prlistView, exType, erMsg);
-			prlistView.setShowFooter(isFoot);
 			teacherBaseAdpter.notifyDataSetChanged();
-			super.onPostExecute(data);
+			lv.onPost(data, lv, prlistView);
 		}
-	}
+
+		@Override
+		public void onPreExecute(){
+			prlistView.setLoading();
+		    lv.setVisibility(View.VISIBLE);
+			lv.show(0);
+		}
+
+		@Override
+		public void onExclption(Exception e) {
+			 String erMsg = e.getMessage();
+        	 lv.onPost(data, lv, prlistView, 1, erMsg);
+        	 prlistView.setShowFooter(false);
+		}
+
+		@Override
+		public void showFoot(boolean showFoot) {
+			prlistView.setShowFooter(showFoot);
+		}
+	};
+	
+	/** 
+	 * 刷新数据
+	 * @author xiong
+	 */
+//	private  class GetDataTask extends AsyncTask<Void, Void, List<TeacherVo>> {
+//		int exType = 0;
+//		String erMsg = "";
+//		boolean isFoot = true;
+//		@Override
+//		protected void onPreExecute() {
+//			prlistView.setLoading();
+//			lv.setVisibility(View.VISIBLE);
+//			lv.show(0);
+//		}
+//		@Override
+//		protected List<TeacherVo> doInBackground(Void... params) {
+//			try {
+//				Map<String, Object> param = new HashMap<String, Object>();
+//				if(keyword!=null)
+//				{
+//					param.put("keyword", keyword);
+//				}
+//				  param.put("orderby",mType);
+//				  if(userInfo!=null){
+//					  param.put("memberid",userInfo.getMemberid());
+//				  }
+//				 param.put("page", prlistView.getPage());
+//				 param.put("size", Def.M_LIST_SIZE);
+//				 ArrayList<TeacherVo> tlist =TeacherDao.getTeacherList(param);
+//				 TeacherDao.getTeacherListV2(param);
+//				 if( prlistView.getPage()>0 ){
+//					 if(tlist!=null){
+//						 for(TeacherVo tv :tlist ){
+//							 data.add(tv);
+//						 }
+//						 if(tlist.size()<Def.M_LIST_SIZE){
+//							 isFoot = false;
+//						 }else{
+//							 isFoot = true;
+//						 }
+//					 }
+//				 }else{
+//					 data = tlist;
+//					 if(tlist!=null&&tlist.size()>0) 
+//					     isFoot = true;
+//					 else
+//						 isFoot = false;
+//				 }
+//			}catch(EuException ex){ 
+//				ex.printStackTrace();
+//				exType = 1;	
+//				erMsg = ex.getMessage();
+//				data = null;
+//				isFoot = false;
+//			}
+//			catch ( Exception e) {
+//				 e.printStackTrace();
+//				 data = null;
+//				 isFoot = false;
+//			}
+//			return data;
+//		}
+//		@Override
+//		protected void onPostExecute(List<TeacherVo> data) {
+//			prlistView.setLoadingGone();
+//			if(teacherBaseAdpter==null){
+//				teacherBaseAdpter = new TeacherAdapter(TeacherActivity.this, R.layout.list_item, data);
+//				prlistView.setAdapter(teacherBaseAdpter);
+//			}
+//			else{
+//				if(prlistView.getAdapter()==null){
+//					prlistView.setAdapter(teacherBaseAdpter);
+//				}
+//				teacherBaseAdpter.setData(data);
+//			}
+//			prlistView.onRefreshComplete();
+//            lv.onPost(data, lv, prlistView, exType, erMsg);
+//			prlistView.setShowFooter(isFoot);
+//			teacherBaseAdpter.notifyDataSetChanged();
+//			super.onPostExecute(data);
+//		}
+//	}
 
 	@Override
 	public void onClick(View v) {
@@ -187,7 +252,7 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 			  mFilterPopularity.setBackgroundResource(R.drawable.filter_but_c);
 			  mFilterStar.setBackgroundResource(R.drawable.filter_but_r);
 			  prlistView.setPage(0);
-			  new GetDataTask().execute();
+//			  new GetDataTask().execute();
 			  break;
 		  case R.id.filter_popularity:
 			  mType = 2;
@@ -198,7 +263,7 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 			  mFilterPopularity.setTextColor(mColorSelect);
 			  mFilterStar.setTextColor(mColorNotSelect);
 			  prlistView.setPage(0);
-			  new GetDataTask().execute();
+//			  new GetDataTask().execute();
 			  break;
 		  case R.id.filter_price:
 			  mType = 3;
@@ -209,7 +274,7 @@ public class TeacherActivity extends PublicActivity implements OnClickListener,O
 			  mFilterPopularity.setTextColor(mColorNotSelect);
 			  mFilterStar.setTextColor(mColorSelect);
 			  prlistView.setPage(0);
-			  new GetDataTask().execute();
+//			  new GetDataTask().execute();
 			  break;
 		  case R.id.menu_control_level1_but:
 			  finish();

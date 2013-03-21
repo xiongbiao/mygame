@@ -11,9 +11,12 @@ import erb.unicomedu.util.Def;
 import erb.unicomedu.util.LogUtil;
 
 public class UnicomeduService extends Service{
+	
+	private String TAG = LogUtil.makeLogTag(UnicomeduService.class);
+	
 	@Override
 	public void onCreate(){
-		LogUtil.d("~onCreate", "start onCreate~~~");
+		LogUtil.d(TAG, "start onCreate~~~");
 		try {
 			DataAsyncTask dat = new DataAsyncTask(this,false); 
 			dat.execute("1");
@@ -29,7 +32,7 @@ public class UnicomeduService extends Service{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		LogUtil.d("~onCreate", "end onCreate~~~");
+		LogUtil.d(TAG, "end onCreate~~~");
 	}
 	
 	@Override
@@ -39,8 +42,7 @@ public class UnicomeduService extends Service{
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
-
-		LogUtil.d("~onStart", "start onStart~~~");
+		LogUtil.d(TAG, "start onStart~~~");
 	}
 
 	@Override

@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import erb.unicomedu.activity.R;
-import erb.unicomedu.util.LogUtil;
 import erb.unicomedu.vo.MsgTypeVo;
 import erb.unicomedu.vo.MsgVo;
 
@@ -38,13 +36,11 @@ public class MsgAdapter extends BaseExpandableListAdapter {
 	 */
 	@Override
 	public Object getChild(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
 		return child.get(groupPosition).get(childPosition);
 	}
 
 	@Override
 	public long getChildId(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
 		return childPosition;
 	}
 
@@ -78,20 +74,17 @@ public class MsgAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getGroupCount() {
-		// TODO Auto-generated method stub
 		return group.size();
 	}
 
 	@Override
 	public long getGroupId(int groupPosition) {
-		// TODO Auto-generated method stub
 		return groupPosition;
 	}
 
 	@Override
 	public View getGroupView(int groupPosition, boolean isExpanded,
 			View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
 		MsgTypeVo string = group.get(groupPosition); 
 		int size = 0;
 		if( group.get(groupPosition).getMsgList()!=null&& group.get(groupPosition).getMsgList().size()>0){
@@ -102,13 +95,11 @@ public class MsgAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public boolean hasStableIds() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.LogUtil;
-import erb.unicomedu.vo.MsgVo;
 import erb.unicomedu.vo.NotificationVo;
 
  

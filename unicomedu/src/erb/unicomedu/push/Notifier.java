@@ -15,8 +15,6 @@
  */
 package erb.unicomedu.push;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import android.app.Notification;
@@ -28,13 +26,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 import erb.unicomedu.activity.MsgInfoActivity;
-import erb.unicomedu.dao.MsgDao;
 import erb.unicomedu.util.Def;
 import erb.unicomedu.util.LogUtil;
 import erb.unicomedu.util.MsgUtil;
 import erb.unicomedu.vo.MsgVo;
 import erb.unicomedu.vo.NotificationVo;
-import erb.unicomedu.vo.TeacherVo;
 
 /** 
  * This class is to notify the user of messages with NotificationManager.

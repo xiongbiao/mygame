@@ -19,11 +19,6 @@ public class LoadActivity extends Activity {
 		initData();
 //		initService();
 	}
-	private void initService(){
-		   ServiceManager serviceManager = new ServiceManager(this);
-	        serviceManager.setNotificationIcon(R.drawable.icon);
-	        serviceManager.startService();
-	}
 	private void initData(){
 		try {
 		    dat = new DataAsyncTask(this,false); 
